@@ -4,7 +4,9 @@ return {
     opts = {
       ensure_installed = {
         "bash", "css", "html", "java", "javascript",
-        "json", "lua", "nix", "python", "rust", "scss"
+        "json", "lua", "nix", "python", "rust", "scss",
+        "xml", "typescript", "tsx", "toml", "rust", "regex",
+        "lua",
       },
       highlight = {
           enable = true,

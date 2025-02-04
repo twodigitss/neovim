@@ -1,8 +1,22 @@
 return {
   -- Colorschemes
+  -- { 'navarasu/onedark.nvim' },
+  -- { 'sainnhe/sonokai' },
   { "Mofiqul/vscode.nvim" },
   { "sainnhe/gruvbox-material" },
   { "nyoom-engineering/oxocarbon.nvim" },
+  { 'folke/tokyonight.nvim' },
+  { "humbertocarmona/kanagawa-mod.nvim" },
+  { 'slugbyte/lackluster.nvim', 
+     config = function()
+       local lackluster = require('lackluster')
+       lackluster.setup({
+         disable_plugin = {
+           bufferline = true;
+         }
+       })
+     end
+  },
 
   -- UI Enhancements
   { "nvim-tree/nvim-web-devicons" },
@@ -35,6 +49,10 @@ return {
   { "neovim/nvim-lspconfig" },
   { "folke/todo-comments.nvim", opts = {} },
   { "lewis6991/gitsigns.nvim", opts = {} },
+  -- { "rafamadriz/friendly-snippets" },
+  -- { "L3MON4D3/LuaSnip",
+  --   dependencies = { "rafamadriz/friendly-snippets" },
+  -- },
 
   -- CMP (Completion)
   { "hrsh7th/nvim-cmp" },

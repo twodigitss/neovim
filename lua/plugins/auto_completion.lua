@@ -32,9 +32,15 @@ return {
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
+        { name = "LuaSnip" },
+        { name = "friendly-snippets" },
         { name = "buffer" },
         { name = "path" },
       }),
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
     })
   end
 },

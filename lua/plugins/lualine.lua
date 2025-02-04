@@ -15,11 +15,11 @@ return {
       --  left    █   //  right    █ 
     },
     sections = {
-      lualine_a = {{'mode', icon = '', separator = { right = leftSeparator}}},
+      lualine_a = {{'mode', icon = '', separator = { right = leftSeparator }}},
       lualine_b = {{
         'branch', 'diff', 'diagnostics', 
         icon = '',
-        separator = { right = leftSeparator},
+        separator = { right = leftSeparator },
         draw_empty = true,
         color = { bg = '#353535' }
       }},
