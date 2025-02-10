@@ -22,10 +22,9 @@ return {
   { "nvim-tree/nvim-web-devicons" },
   { "dstein64/nvim-scrollview" },
   { "RRethy/vim-illuminate" },
+  { "projekt0n/circles.nvim", opts={} },
   { "lukas-reineke/indent-blankline.nvim", 
     main = "ibl",
-      ---@module "ibl"
-      ---@type ibl.config
     opts = {scope = { enabled = false }} 
   },
 

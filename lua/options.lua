@@ -3,6 +3,7 @@
   vim.api.nvim_set_keymap('n', '<C-t>', ':tabnew | NvimTreeOpen<CR>', { noremap = true, silent = true })
   vim.api.nvim_set_keymap('n', '<Tab>', ':tabnext<CR>', { noremap = true, silent = true })
   vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", "<A-w>", "<Esc>:q<CR>", { noremap = true, silent = true })
   vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>a", { noremap = true, silent = true })
 
   -- vim.api.nvim_set_keymap('n', '<C-k>', ':Telescope colorscheme<CR>', { noremap = true, silent = true })
@@ -19,7 +20,7 @@
   vim.cmd('syntax enable')
   vim.o.termguicolors = true
   vim.o.background = 'dark'
-  vim.cmd('colorscheme lackluster-mint')
+  vim.cmd('colorscheme lackluster-hack')
   vim.opt.fillchars = { eob = " " }
   vim.opt.fillchars:append({ vert = " " }) --│
 

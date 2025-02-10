@@ -12,7 +12,7 @@ return {
       sync_root_with_cwd = true,
       filters = { dotfiles = true },
       sort = {
-        -- sorter = "case_sensitive",
+        sorter = "case_sensitive",
         folders_first = true,
       },
       update_focused_file = {
@@ -29,17 +29,42 @@ return {
         highlight_git = true,
         group_empty = true,
         indent_markers = { enable = true },
+        indent_width = 2,
         icons = {
+          web_devicons = {
+            file = {
+              -- ENABLE FOR NORMAL ICONS
+              enable = true,
+              color = false,
+            },
+            folder = {
+              enable = false,
+              color = true,
+            },
+          },
           glyphs = {
             default = "󰈚",
             folder = {
-              default = "",
+              -- default = "",
+              default = "",
               empty = "",
               empty_open = "",
-              open = "",
+              open = "",
+              -- open = "",
               symlink = "",
             },
-            git = { unmerged = "" },
+            git = { 
+              unmerged = "",
+              unstaged = "",
+              -- unstaged = "",
+              -- unstaged = "✗",
+              staged = "✓",
+              renamed = "➜",
+              untracked = "󰝒",
+              --untracked = "★",
+              deleted = "",
+              ignored = "◌",
+            },
           },
         },
       },
