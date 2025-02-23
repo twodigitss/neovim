@@ -4,14 +4,17 @@ return {
     opts = {
       ensure_installed = {
         "bash", "css", "html", "java", "javascript",
-        "json", "lua", "nix", "python", "rust", "scss",
-        "xml", "typescript", "tsx", "toml", "rust", "regex",
-        "lua",
+        "json", "lua", "nix", "python", "rust", 
+        "typescript", "tsx", "rust", "lua",
       },
-      highlight = {
+    },
+    config = function()
+      require'nvim-treesitter.configs'.setup {
+        highlight = {
           enable = true,
-          additional_vim_regex_highlighting = true
+          additional_vim_regex_highlighting = false,
+        },
       }
-    }
+    end
 
 }

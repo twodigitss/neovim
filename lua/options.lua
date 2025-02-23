@@ -3,24 +3,21 @@
   vim.api.nvim_set_keymap('n', '<C-t>', ':tabnew | NvimTreeOpen<CR>', { noremap = true, silent = true })
   vim.api.nvim_set_keymap('n', '<Tab>', ':tabnext<CR>', { noremap = true, silent = true })
   vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
-  vim.api.nvim_set_keymap("n", "<A-w>", "<Esc>:q<CR>", { noremap = true, silent = true })
   vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>a", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", "<A-w>", "<Esc>:q<CR>", { noremap = true, silent = true })
 
-  -- vim.api.nvim_set_keymap('n', '<C-k>', ':Telescope colorscheme<CR>', { noremap = true, silent = true })
-  -- vim.api.nvim_set_keymap('n', '<A-e>', ':Telescope symbols<CR>', { noremap = true, silent = true })
-  -- vim.api.nvim_set_keymap('n', '<A-f>', ':Telescope find_files<CR>', { noremap = true, silent = true })
-  
   vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap=true, silent=true })
   vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap=true, silent=true })
   vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap=true, silent=true })
   vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap=true, silent=true })
   vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap=true, silent=true })
+  vim.api.nvim_set_keymap('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap=true, silent=true })
 
 -- Configuración de colores y apariencia
   vim.cmd('syntax enable')
   vim.o.termguicolors = true
   vim.o.background = 'dark'
-  vim.cmd('colorscheme lackluster-hack')
+  vim.cmd('colorscheme tokyonight-night')
   vim.opt.fillchars = { eob = " " }
   vim.opt.fillchars:append({ vert = " " }) --│
 
@@ -47,12 +44,16 @@
   vim.o.hlsearch = true
   vim.o.wildmenu = false
   vim.o.wildmode = 'list:longest,full'
-  --
+  -- vim.g.mapleader = "#"
+
   -- Configuración de plegado (fold)
   vim.o.foldenable = true
   vim.o.foldmethod = 'manual'
   vim.o.foldnestmax = 10
-  vim.o.foldlevelstart = 2
+  -- vim.o.foldlevelstart = 2
+    vim.o.foldcolumn = '1'
+    vim.o.foldlevel = 99
+    vim.o.foldlevelstart = 99
 
 -- Abrir NERDTree si solo se abre un archivo y no es un directorio
   vim.api.nvim_create_autocmd("VimEnter", {
@@ -81,3 +82,15 @@
     hi Comment cterm=italic gui=italic
     hi Keyword cterm=italic gui=italic
   ]]
+
+
+-- vim.cmd([[
+--   "remember folding
+--   augroup remember_folds
+--     autocmd!
+--     autocmd BufWinLeave * mkview
+--     autocmd BufWinEnter * silent! loadview
+--   augroup END
+--
+-- ]])
+--

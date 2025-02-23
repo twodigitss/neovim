@@ -38,8 +38,14 @@ return {
         { name = "path" },
       }),
       window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered({ 
+          border = 'single',
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None"
+        }),
+        documentation = cmp.config.window.bordered({
+          border = 'single',
+          winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None"
+        }),
       },
     })
   end

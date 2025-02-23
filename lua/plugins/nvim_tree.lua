@@ -33,7 +33,6 @@ return {
         icons = {
           web_devicons = {
             file = {
-              -- ENABLE FOR NORMAL ICONS
               enable = true,
               color = false,
             },
@@ -47,22 +46,17 @@ return {
             folder = {
               -- default = "",
               default = "",
+              open = "",
               empty = "",
-              empty_open = "",
-              open = "",
-              -- open = "",
-              symlink = "",
+              empty_open = "",
             },
             git = { 
               unmerged = "",
               unstaged = "",
-              -- unstaged = "",
-              -- unstaged = "✗",
               staged = "✓",
               renamed = "➜",
-              untracked = "󰝒",
-              --untracked = "★",
-              deleted = "",
+              untracked = "+",
+              deleted = "-",
               ignored = "◌",
             },
           },

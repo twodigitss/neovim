@@ -6,7 +6,7 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" }, -- Optional for icons
   opts = {
     options = {
-      disabled_filetypes = { 'packer', 'NvimTree' },
+      disabled_filetypes = { 'NvimTree' },
       globalstatus = true,
       icons_enabled = true,
       theme = 'auto',
