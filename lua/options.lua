@@ -17,7 +17,7 @@
   vim.cmd('syntax enable')
   vim.o.termguicolors = true
   vim.o.background = 'dark'
-  vim.cmd('colorscheme tokyonight-night')
+  vim.cmd('colorscheme decay-default')
   vim.opt.fillchars = { eob = " " }
   vim.opt.fillchars:append({ vert = " " }) --│
 
