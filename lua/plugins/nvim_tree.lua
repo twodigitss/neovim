@@ -7,17 +7,17 @@ return {
   },
   config = function()
     require("nvim-tree").setup({
-      disable_netrw = true,
-      hijack_cursor = true,
+      disable_netrw = true, --true
+      hijack_cursor = true, --true
       sync_root_with_cwd = true,
       filters = { dotfiles = true },
       sort = {
-        sorter = "case_sensitive",
+        -- sorter = "case_sensitive",
         folders_first = true,
       },
       update_focused_file = {
         enable = true,
-        update_root = false,
+        update_root = false, --false (if folds act weird do smth)
       },
       view = {
         width = 30,
@@ -26,25 +26,26 @@ return {
       },
       renderer = {
         root_folder_label = false,
-        highlight_git = true,
+        highlight_git = false, --true
         group_empty = true,
         indent_markers = { enable = true },
         indent_width = 2,
         icons = {
           web_devicons = {
             file = {
-              enable = true,
+              -- enable = true,
+              ----true works for white themes, false for dark themes
               color = false,
             },
-            folder = {
-              enable = false,
-              color = true,
-            },
+            -- folder = {
+            --   enable = false,
+            --   color = true, --false
+            -- },
           },
           glyphs = {
-            default = "󰈚",
+            default = "",
+            bookmark = "󰆤",
             folder = {
-              -- default = "",
               default = "",
               open = "",
               empty = "",
@@ -52,7 +53,7 @@ return {
             },
             git = { 
               unmerged = "",
-              unstaged = "",
+              unstaged = "*",
               staged = "✓",
               renamed = "➜",
               untracked = "+",

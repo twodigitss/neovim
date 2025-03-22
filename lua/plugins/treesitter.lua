@@ -3,9 +3,9 @@ return {
     build = ":TSUpdate",
     opts = {
       ensure_installed = {
-        "bash", "css", "html", "java", "javascript",
-        "json", "lua", "nix", "python", "rust", 
-        "typescript", "tsx", "rust", "lua",
+        "bash", "comment", "css", "html",
+        "javascript","json", "lua", "nix",
+        "python", "rust", "tsx", "typescript",
       },
     },
     config = function()
