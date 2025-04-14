@@ -1,13 +1,13 @@
 -- OPEN NVIMTREE AUTOMATICALLY WHEN OPENING A FILE
-vim.api.nvim_create_autocmd("VimEnter", {
-  pattern = "*",
-  callback = function()
-    if vim.fn.argc() == 1 and vim.fn.isdirectory(vim.fn.argv(0)) == 0 then
-      vim.cmd("NvimTreeOpen")
-      vim.cmd("wincmd p")
-    end
-  end
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   pattern = "*",
+--   callback = function()
+--     if vim.fn.argc() == 1 and vim.fn.isdirectory(vim.fn.argv(0)) == 0 then
+--       vim.cmd("NvimTreeOpen")
+--       vim.cmd("wincmd p")
+--     end
+--   end
+-- })
 
 -- CLOSE NVIMTREE WHEN ITS THE LAST OPENED WINDOW
 vim.api.nvim_create_autocmd("BufEnter", {
@@ -24,6 +24,7 @@ end
 vim.cmd [[
   hi Comment cterm=italic gui=italic
   hi Keyword cterm=italic gui=italic
+  highlight Folded guibg=NONE ctermbg=NONE
 ]]
 
 -- AUTOCMDS TO REMEMBER FOLDS
@@ -39,7 +40,7 @@ vim.cmd([[
   augroup END
 ]])
 
--- TABLINE MADE WITH LUA (VANILLA)
+-- TABLINE MADE WITH LUA
 function _G.MyTabLine()
   -- Colores
   vim.cmd("highlight link TabIndicator PMenu")  -- "TAB X/Y"

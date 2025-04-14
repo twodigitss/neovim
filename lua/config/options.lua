@@ -8,8 +8,10 @@ vim.o.tabline = "%!v:lua.MyTabLine()"
 vim.cmd('colorscheme blossom')
   vim.cmd('syntax enable')
 
+-- vim.opt.foldtext = [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)) . ' (' . (v:foldend - v:foldstart + 1) . ' lines)']]
 vim.opt.fillchars = { eob = " " }
-vim.opt.fillchars:append({ vert = " " }) --│
+vim.opt.fillchars:append({ vert = " ", fold = " " }) --│
+vim.g.mapleader = " "
 
 vim.o.showmode = true
 vim.opt.number = true

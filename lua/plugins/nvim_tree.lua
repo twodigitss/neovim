@@ -20,9 +20,9 @@ return {
         update_root = false, --false (if folds act weird do smth)
       },
       view = {
-        width = 30,
+        width = 40,
         preserve_window_proportions = true,
-        side = "left",
+        side = "right",
       },
       renderer = {
         root_folder_label = false,
@@ -51,7 +51,7 @@ return {
               empty = "",
               empty_open = "",
             },
-            git = { 
+            git = {
               unmerged = "",
               unstaged = "*",
               staged = "✓",
