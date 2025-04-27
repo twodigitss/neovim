@@ -1,7 +1,15 @@
 return {
 -- Colorschemes
+  { "rktjmp/lush.nvim" },
   { 'rayes0/blossom.vim' },
-  { "gmr458/vscode_modern_theme.nvim"},
+  { "EdenEast/nightfox.nvim" },
+  { 'brenoprata10/nvim-highlight-colors',
+    config = function()
+      require('nvim-highlight-colors').setup({
+        render = 'virtual', virtual_symbol = '󰝤',
+      })
+    end
+  },
 
 -- UI Enhancements
   { "nvim-tree/nvim-web-devicons" },
@@ -9,18 +17,17 @@ return {
     name = "barbecue", version = "*",
     opts = {}, dependencies = {"SmiteshP/nvim-navic"}},
 
--- LSP & Completion
-  { "neovim/nvim-lspconfig" },
-  { 'windwp/nvim-ts-autotag' },
-  { "lewis6991/gitsigns.nvim" },
+-- Completion
   { "github/copilot.vim" },
-  { 'saghen/blink.cmp',
-    dependencies = { 'rafamadriz/friendly-snippets' },
-    version = '*',
+  { "windwp/nvim-ts-autotag",
+    opts = {
+      per_filetype = {["html"] = {enable_close = true}}
+    }},
+  { "saghen/blink.cmp",
     opts = { keymap = { preset = 'enter' } },
-    opts_extend = { "sources.default" }
-  },
-
+    opts_extend = { 'sources.default' },
+    dependencies = { 'rafamadriz/friendly-snippets' },
+    version = '*'},
 
 --mini.nvim
   { 'echasnovski/mini.comment', version = false,

@@ -9,31 +9,39 @@ This is the (neovim) <strong>configuration files</strong> of an ordinary guy wit
 
 ## 📃 Keybinds 
 
+# Neovim Keyboard Shortcuts
+
 | Key | Mode | Action |
 |-----|------|--------|
 |<strong>Terminal</strong>|
-| `Alt + t` | Normal | Open horizontal terminal |
-| `Alt + T` | Normal | Open vertical terminal |
-| `Esc` | Terminal | Exit terminal mode |
-|<strong>Tab management</strong>|
-| `Ctrl + t` | Normal | New tab with file explorer |
-| `Ctrl + n` | Normal | Toggle NvimTree |
-| `Alt + e` | Normal | Open built-in file explorer |
-| `Tab` | Normal | Next  tab |
-|<strong>VSCode alike</strong>|
-| `Ctrl + s` | Normal/Insert | Save file |
-| `Alt + w` | Normal | Close window |
-| `Ctrl + q` | Normal | Force quit file |
-| `Ctrl + e` | Normal | Create new file |
-|<strong>Split navigation</strong>|
-| `Ctrl + ←` | Normal | Move to left split |
-| `Ctrl + ↓` | Normal | Move to bottom split |
-| `Ctrl + ↑` | Normal | Move to top split |
-| `Ctrl + →` | Normal | Move to right split |
-|<strong>Language Server </strong>|
+| `<Esc>` | Terminal | Exit terminal mode |
+| `<leader>o` | Normal | Open vertical terminal |
+| `<leader>p` | Normal | Open horizontal terminal (height: 13) |
+|<strong>Tab/Window Management</strong>|
+| `<leader>e` | Normal | Open built-in file explorer |
+| `<leader>v` | Normal | Create vertical split |
+| `<leader>s` | Normal | Create horizontal split |
+| `<C-t>` | Normal | Open new tab |
+| `<Tab>` | Normal | Go to next tab |
+|<strong>VSCode-like Shortcuts</strong>|
+| `<C-s>` | Normal | Save file |
+| `<C-s>` | Insert | Save file (goes to Normal mode first) |
+| `<C-z>` | Normal | Undo |
+| `<C-y>` | Normal | Redo |
+| `<C-q>` | Normal | Quit file |
+| `<C-Q>` | Normal | Force quit file |
+|<strong>Split Navigation</strong>|
+| `<C-Left>` | Normal | Move to left split |
+| `<C-Down>` | Normal | Move to bottom split |
+| `<C-Up>` | Normal | Move to top split |
+| `<C-Right>` | Normal | Move to right split |
+|<strong>Plugin Shortcuts</strong>|
+| `<C-n>` | Normal | Toggle NvimTree file explorer |
+| `<leader>f` | Normal | Open mini.pick file finder |
+|<strong>LSP Functionality</strong>|
 | `gi` | Normal | Go to definition |
 | `ga` | Normal | Code action |
 | `gd` | Normal | Show hover documentation |
 | `gr` | Normal | Show references |
-| `[d` | Normal | Previous diagnostic |
-| `]d` | Normal | Next diagnostic |
+| `[d` | Normal | Go to previous diagnostic |
+| `]d` | Normal | Go to next diagnostic |

@@ -20,25 +20,31 @@ vim.api.nvim_create_autocmd("BufEnter", {
 end
 })
 
--- ITALICS FOR COMMENTS AND KEYWORDS
 vim.cmd [[
+  "ITALICS FOR COMMENTS AND KEYWORDS
   hi Comment cterm=italic gui=italic
   hi Keyword cterm=italic gui=italic
   highlight Folded guibg=NONE ctermbg=NONE
-]]
 
--- AUTOCMDS TO REMEMBER FOLDS
-vim.cmd([[
+  "AUTOCMDS TO REMEMBER FOLDS
   "Set a custom viewdir to avoid conflicts
   set viewdir=~/.config/nvim/.view//
 
-  augroup remember_folds
-    autocmd!
-    autocmd BufWinLeave * if expand('%') != '' | mkview | endif
-    autocmd BufWinEnter * if expand('%') != '' | silent! loadview | endif
-    autocmd BufWritePost * if expand('%') != '' | mkview | endif
-  augroup END
-]])
+  " augroup remember_folds
+  "   autocmd!
+  "   autocmd BufWinLeave * if expand('%') != '' | mkview | endif
+  "   autocmd BufWinEnter * if expand('%') != '' | silent! loadview | endif
+  "   autocmd BufWritePost * if expand('%') != '' | mkview | endif
+  " augroup END
+
+  " augroup RelativeNumberToggle
+  "   autocmd!
+  "   autocmd InsertEnter * set norelativenumber
+  "   autocmd InsertLeave * set relativenumber
+  " augroup END
+
+]]
+
 
 -- TABLINE MADE WITH LUA
 function _G.MyTabLine()
