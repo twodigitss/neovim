@@ -31,6 +31,7 @@ vim.keymap.set("n", "<C-Right>",  "<C-w>l", { noremap = true, silent = true })
 -- PLUGINS
 vim.api.nvim_set_keymap('n', '<C-n>',     ':NvimTreeToggle<CR>',                      { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>f', ':Pick files<CR>',                          { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>t', ':Twilight<CR>',                      { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'gi',        '<cmd>lua vim.lsp.buf.definition()<CR>',    { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'ga',        '<cmd>lua vim.lsp.buf.code_action()<CR>',   { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'gd',        '<cmd>lua vim.lsp.buf.hover()<CR>',         { noremap = true, silent = true })

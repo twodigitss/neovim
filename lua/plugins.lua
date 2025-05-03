@@ -1,15 +1,7 @@
 return {
 -- Colorschemes
-  { "rktjmp/lush.nvim" },
   { 'rayes0/blossom.vim' },
   { "EdenEast/nightfox.nvim" },
-  { 'brenoprata10/nvim-highlight-colors',
-    config = function()
-      require('nvim-highlight-colors').setup({
-        render = 'virtual', virtual_symbol = '󰝤',
-      })
-    end
-  },
 
 -- UI Enhancements
   { "nvim-tree/nvim-web-devicons" },
@@ -17,17 +9,16 @@ return {
     name = "barbecue", version = "*",
     opts = {}, dependencies = {"SmiteshP/nvim-navic"}},
 
--- Completion
-  { "github/copilot.vim" },
+-- LSP & Completion
+  { "neovim/nvim-lspconfig" },
   { "windwp/nvim-ts-autotag",
-    opts = {
-      per_filetype = {["html"] = {enable_close = true}}
-    }},
-  { "saghen/blink.cmp",
-    opts = { keymap = { preset = 'enter' } },
-    opts_extend = { 'sources.default' },
+    opts = {per_filetype = {["html"] = {enable_close = true}}}},
+  { "github/copilot.vim" },
+  { 'saghen/blink.cmp',
     dependencies = { 'rafamadriz/friendly-snippets' },
-    version = '*'},
+    version = '*',
+    opts = { keymap = { preset = 'enter' } },
+    opts_extend = { "sources.default" }},
 
 --mini.nvim
   { 'echasnovski/mini.comment', version = false,
@@ -44,6 +35,7 @@ return {
     config = function() require('mini.statusline').setup() end },
   { 'echasnovski/mini.indentscope', version = false,
     config = function() require('mini.indentscope').setup() end },
+
 
 }
 

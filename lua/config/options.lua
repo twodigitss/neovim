@@ -1,22 +1,17 @@
--- FILES
-vim.o.backup = false
-vim.o.swapfile = false
-
 -- VISUALS
-vim.opt.scrolloff = 1
 vim.o.showtabline = 2
 vim.o.tabline = "%!v:lua.MyTabLine()"
 vim.cmd('colorscheme carbonfox')
   vim.cmd('syntax enable')
 
 vim.opt.fillchars = { eob = " " }
-vim.opt.fillchars:append({ vert = "|", fold = " " }) --│
+vim.opt.fillchars:append({ vert = "│", fold = " " }) --│
 vim.g.mapleader = " "
 
 vim.o.showmode = true
 vim.opt.number = true
   vim.opt.relativenumber = true
-vim.wo.cursorline = false --true
+vim.wo.cursorline = true
 vim.o.showmatch = true
 vim.o.autoindent = false --true
 vim.o.expandtab = true
@@ -41,10 +36,9 @@ vim.o.smarttab = true
 vim.o.viewoptions = 'folds,cursor'
 vim.o.sessionoptions = 'folds'
 vim.o.foldenable = true
-  vim.o.foldmethod = 'manual'
-  vim.o.foldnestmax = 10
-  vim.o.foldcolumn = '0' --width of fold column shown sidebar
-  vim.opt.foldtext = "getline(v:foldstart) .. '...'"
+vim.o.foldmethod = 'manual'
+vim.o.foldcolumn = '0'
+vim.o.foldnestmax = 10
 vim.o.foldlevel = 99
-vim.o.foldlevelstart = 8
+vim.o.foldlevelstart = 99
 
