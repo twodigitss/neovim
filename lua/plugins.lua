@@ -5,11 +5,12 @@ return {
 
 -- UI Enhancements
   { "nvim-tree/nvim-web-devicons" },
+  { 'lewis6991/gitsigns.nvim' },
   { "utilyre/barbecue.nvim",
     name = "barbecue", version = "*",
     opts = {}, dependencies = {"SmiteshP/nvim-navic"}},
 
--- LSP & Completion
+-- Completion
   { "windwp/nvim-ts-autotag",
     opts = {per_filetype = {["html"] = {enable_close = true}}}},
   { "github/copilot.vim" },

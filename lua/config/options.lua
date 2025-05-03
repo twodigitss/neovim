@@ -1,7 +1,7 @@
 -- VISUALS
 vim.o.showtabline = 2
 vim.o.tabline = "%!v:lua.MyTabLine()"
-vim.cmd('colorscheme carbonfox')
+vim.cmd('colorscheme blossom')
   vim.cmd('syntax enable')
 
 vim.opt.fillchars = { eob = " " }
