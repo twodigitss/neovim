@@ -25,10 +25,8 @@ vim.cmd [[
   hi Comment cterm=italic gui=italic
   hi Keyword cterm=italic gui=italic
   highlight Folded guibg=NONE ctermbg=NONE
-]]
 
--- AUTOCMDS TO REMEMBER FOLDS
-vim.cmd([[
+  "AUTOCMDS TO REMEMBER FOLDS
   " Set a custom viewdir to avoid conflicts
   set viewdir=~/.config/nvim/.view//
 
@@ -38,7 +36,7 @@ vim.cmd([[
     autocmd BufWinEnter * if expand('%') != '' | silent! loadview | endif
     autocmd BufWritePost * if expand('%') != '' | mkview | endif
   augroup END
-]])
+]]
 
 -- TABLINE MADE WITH LUA
 function _G.MyTabLine()

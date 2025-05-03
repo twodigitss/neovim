@@ -16,7 +16,7 @@ vim.api.nvim_set_keymap('n', '<Tab>',     ':tabnext<CR>', { noremap = true, sile
 
 -- VSCODE LIKE KEYSTROKES
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>",       { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>a", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>a", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-z>", "u",            { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-y>", "<C-r>",        { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-q>", ":q <CR>",      { noremap = true, silent = true })
@@ -31,11 +31,6 @@ vim.keymap.set("n", "<C-Right>",  "<C-w>l", { noremap = true, silent = true })
 -- PLUGINS
 vim.api.nvim_set_keymap('n', '<C-n>',     ':NvimTreeToggle<CR>',                      { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>f', ':Pick files<CR>',                          { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>t', ':Twilight<CR>',                      { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'gi',        '<cmd>lua vim.lsp.buf.definition()<CR>',    { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'ga',        '<cmd>lua vim.lsp.buf.code_action()<CR>',   { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'gd',        '<cmd>lua vim.lsp.buf.hover()<CR>',         { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'gr',        '<cmd>lua vim.lsp.buf.references()<CR>',    { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '[d',        '<cmd>lua vim.diagnostic.goto_prev()<CR>',  { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', ']d',        '<cmd>lua vim.diagnostic.goto_next()<CR>',  { noremap = true, silent = true })
 

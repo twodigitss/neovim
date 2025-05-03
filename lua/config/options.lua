@@ -5,7 +5,7 @@ vim.cmd('colorscheme carbonfox')
   vim.cmd('syntax enable')
 
 vim.opt.fillchars = { eob = " " }
-vim.opt.fillchars:append({ vert = "│", fold = " " }) --│
+vim.opt.fillchars:append({ vert = "|", fold = " " }) --│
 vim.g.mapleader = " "
 
 vim.o.showmode = true

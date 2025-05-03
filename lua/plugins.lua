@@ -10,7 +10,6 @@ return {
     opts = {}, dependencies = {"SmiteshP/nvim-navic"}},
 
 -- LSP & Completion
-  { "neovim/nvim-lspconfig" },
   { "windwp/nvim-ts-autotag",
     opts = {per_filetype = {["html"] = {enable_close = true}}}},
   { "github/copilot.vim" },

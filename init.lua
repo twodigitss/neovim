@@ -40,3 +40,22 @@ require("lazy").setup({
 -- configuration on lua/config
 require("config")
 
+--Language Servers
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client:supports_method('textDocument/completion') then
+      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+    end
+  end,
+})
+
+--virtual_text o virtual_lines para mas fancy
+vim.diagnostic.config(
+  {virtual_lines = {current_line=true}}
+)
+
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('pylsp')
+vim.lsp.enable('rust-analyzer')
