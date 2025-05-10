@@ -2,40 +2,47 @@ return {
 -- Colorschemes
   { 'rayes0/blossom.vim' },
   { "EdenEast/nightfox.nvim" },
+  { "webhooked/kanso.nvim", lazy = false },
 
 -- UI Enhancements
   { "nvim-tree/nvim-web-devicons" },
-  { 'lewis6991/gitsigns.nvim' },
-  { "utilyre/barbecue.nvim",
-    name = "barbecue", version = "*",
-    opts = {}, dependencies = {"SmiteshP/nvim-navic"}},
+  { 'Bekaboo/dropbar.nvim', opts={} },
+  -- { 'lewis6991/gitsigns.nvim' },
+  { "brenoprata10/nvim-highlight-colors",
+    opts = { render = 'virtual', virtual_symbol = '■' }
+  },
+  { "lukas-reineke/indent-blankline.nvim",
+    main = "ibl", opts = {},
+  },
 
 -- Completion
   { "windwp/nvim-ts-autotag",
-    opts = {per_filetype = {["html"] = {enable_close = true}}}},
+    opts = {per_filetype = {["html"] = {enable_close = true}}}
+  },
   { "github/copilot.vim" },
   { 'saghen/blink.cmp',
     dependencies = { 'rafamadriz/friendly-snippets' },
     version = '*',
     opts = { keymap = { preset = 'enter' } },
-    opts_extend = { "sources.default" }},
+    opts_extend = { "sources.default" }
+  },
 
 --mini.nvim
-  { 'echasnovski/mini.comment', version = false,
-    config = function() require('mini.comment').setup() end },
-  { 'echasnovski/mini.pairs', version = false,
-    config = function() require('mini.pairs').setup() end },
-  { 'echasnovski/mini.pick', version = false,
-    config = function() require('mini.pick').setup() end}, --install fd, ripgrep, or git
-  { 'echasnovski/mini.cursorword', version = false,
-    config = function() require('mini.cursorword').setup() end },
-  { 'echasnovski/mini.notify', version = false,
-    config = function() require('mini.notify').setup() end },
-  { 'echasnovski/mini.statusline', version = false,
-    config = function() require('mini.statusline').setup() end },
-  { 'echasnovski/mini.indentscope', version = false,
-    config = function() require('mini.indentscope').setup() end },
+  { 'echasnovski/mini.comment', version = false, opts={} },
+  { 'echasnovski/mini.pairs', version = false, opts={} },
+  --install fd, ripgrep, or git
+  { 'echasnovski/mini.pick', version = false, opts={} },
+  { 'echasnovski/mini.cursorword', version = false, opts={} },
+  { 'echasnovski/mini.notify', version = false, opts={} },
 
+--snacks
+  { "folke/snacks.nvim",
+    priority = 1000, lazy = false,
+    opts = {
+      quickfile = { enabled = true },
+      statuscolumn = { enabled = true },
+    },
+  },
 
-}
+} --end of file
 

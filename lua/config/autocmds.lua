@@ -13,9 +13,9 @@
 vim.api.nvim_create_autocmd("BufEnter", {
     pattern = "*",
     callback = function()
-    -- Verifica si NvimTree es la única ventana abierta
-    if vim.fn.winnr('$') == 1 and require'nvim-tree.view'.is_visible() then
-        vim.cmd("q")
+    local buftype = vim.api.nvim_buf_get_option(0, "filetype")
+    if vim.fn.winnr('$') == 1 and buftype == "neo-tree" then
+      vim.cmd("q")
     end
 end
 })
@@ -25,6 +25,13 @@ vim.cmd [[
   hi Comment cterm=italic gui=italic
   hi Keyword cterm=italic gui=italic
   highlight Folded guibg=NONE ctermbg=NONE
+
+  highlight! link NeoTreeGitAdded NormalNC
+  highlight! link NeoTreeGitConflict NormalNC
+  highlight! link NeoTreeGitDeleted NormalNC
+  highlight! link NeoTreeGitIgnored NormalNC
+  highlight! link NeoTreeGitModified NormalNC
+  highlight! link NeoTreeGitUntracked NormalNC
 
   "AUTOCMDS TO REMEMBER FOLDS
   " Set a custom viewdir to avoid conflicts

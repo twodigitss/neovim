@@ -1,23 +1,26 @@
 -- VISUALS
-vim.o.showtabline = 2
-vim.o.tabline = "%!v:lua.MyTabLine()"
-vim.cmd('colorscheme blossom')
+vim.o.showtabline = 0 --2
+-- vim.o.tabline = "%!v:lua.MyTabLine()"
+vim.cmd('colorscheme kanso-zen')
   vim.cmd('syntax enable')
 
 vim.opt.fillchars = { eob = " " }
-vim.opt.fillchars:append({ vert = "|", fold = " " }) --│
+vim.opt.fillchars:append({ vert = "│", fold = " " }) --│
 vim.g.mapleader = " "
 
-vim.o.showmode = true
+-- vim.opt.numberwidth = 8
+-- vim.opt.signcolumn = "yes"
+
+-- vim.o.showmode = true --might be redundant
 vim.opt.number = true
-  vim.opt.relativenumber = true
-vim.wo.cursorline = true
+  vim.opt.relativenumber = false
+vim.wo.cursorline = true --true
 vim.o.showmatch = true
-vim.o.autoindent = false --true
+vim.o.autoindent = true
 vim.o.expandtab = true
 vim.o.incsearch = true
   vim.o.hlsearch = true
-  vim.o.wildmenu = false
+  vim.o.wildmenu = true
   vim.o.wildmode = 'list:longest,full'
 
 -- UTILS
@@ -26,7 +29,7 @@ vim.o.compatible = false
 vim.o.ignorecase = true
   vim.o.wildignorecase = true
   vim.o.smartcase = true
-vim.o.smartindent = false --true
+vim.o.smartindent = true
   vim.o.copyindent = true
 vim.o.smarttab = true
   vim.o.tabstop = 2

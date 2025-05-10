@@ -58,4 +58,5 @@ vim.diagnostic.config(
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('pylsp')
+vim.lsp.enable('gopls')
 vim.lsp.enable('rust-analyzer')

@@ -29,7 +29,7 @@ vim.keymap.set("n", "<C-Up>",     "<C-w>k", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-Right>",  "<C-w>l", { noremap = true, silent = true })
 
 -- PLUGINS
-vim.api.nvim_set_keymap('n', '<C-n>',     ':NvimTreeToggle<CR>',                      { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-n>',     ':Neotree toggle<CR>',                      { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>f', ':Pick files<CR>',                          { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '[d',        '<cmd>lua vim.diagnostic.goto_prev()<CR>',  { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', ']d',        '<cmd>lua vim.diagnostic.goto_next()<CR>',  { noremap = true, silent = true })
