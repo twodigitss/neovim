@@ -1,7 +1,10 @@
 -- TERMINAL
-vim.api.nvim_set_keymap('t', '<Esc>',     '<C-\\><C-n>',                              { noremap = true }) --fixed default behavior
-vim.api.nvim_set_keymap('n', '<leader>o', ':vsplit<CR><C-w>l:term<CR>',               { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>p', ':split<CR><C-w>j:resize 13<CR>:term<CR>',  { noremap = true, silent = true })
+local betterTerm = require('betterTerm')
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>',                              { noremap = true }) --fixed default behavior
+vim.keymap.set("n", "<leader>;", betterTerm.open, { desc = "Open terminal"})
+vim.keymap.set("t", "<C-t>", betterTerm.select, { desc = "Select terminal"})
+-- vim.api.nvim_set_keymap('n', '<leader>o', ':vsplit<CR><C-w>l:term<CR>',               { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>p', ':split<CR><C-w>j:resize 13<CR>:term<CR>',  { noremap = true, silent = true })
 
 -- COMMENTING ON REACT COMPONENTS
 vim.api.nvim_set_keymap('n', '<leader>c', '_Di{}<Esc>i/**/<Esc>hhp_v=',  { noremap = true, silent = true })
@@ -16,7 +19,8 @@ vim.api.nvim_set_keymap('n', '<Tab>',     ':tabnext<CR>', { noremap = true, sile
 
 -- VSCODE LIKE KEYSTROKES
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>",       { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>a", { noremap = true, silent = true })
+--this is used by nvim0.11 lsp, but i dont remember what
+vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>a", { noremap = true, silent = true }) 
 vim.api.nvim_set_keymap("n", "<C-z>", "u",            { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-y>", "<C-r>",        { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-q>", ":q <CR>",      { noremap = true, silent = true })

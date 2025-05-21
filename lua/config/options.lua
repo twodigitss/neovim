@@ -5,11 +5,10 @@ vim.cmd('colorscheme kanso-zen')
   vim.cmd('syntax enable')
 
 vim.opt.fillchars = { eob = " " }
-vim.opt.fillchars:append({ vert = "│", fold = " " }) --│
+vim.opt.fillchars:append({ vert = " ", fold = " " }) --│
 vim.g.mapleader = " "
 
--- vim.opt.numberwidth = 8
--- vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "yes:1"
 
 -- vim.o.showmode = true --might be redundant
 vim.opt.number = true

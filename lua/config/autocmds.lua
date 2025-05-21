@@ -3,7 +3,7 @@
 --   pattern = "*",
 --   callback = function()
 --     if vim.fn.argc() == 1 and vim.fn.isdirectory(vim.fn.argv(0)) == 0 then
---       vim.cmd("NvimTreeOpen")
+--       vim.cmd("Neotree")
 --       vim.cmd("wincmd p")
 --     end
 --   end
