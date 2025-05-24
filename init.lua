@@ -52,11 +52,12 @@ require("config")
 
 --virtual_text o virtual_lines para mas fancy
 vim.diagnostic.config(
-  {virtual_lines = {current_line=true}}
+  -- replaced by the CursorHold thing in autocmds
+  -- {virtual_lines = {current_line=true}}
 )
 
 vim.lsp.enable('lua_ls')
-vim.lsp.enable('ts_ls')
+vim.lsp.enable('vtsls')
 vim.lsp.enable('pylsp')
 vim.lsp.enable('gopls')
 vim.lsp.enable('rust-analyzer')

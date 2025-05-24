@@ -4,7 +4,7 @@
 --   },
 
 return {
-  cmd = { 'typescript-language-server', '--stdio' },
+  cmd = { 'vtsls', '--stdio' },
   filetypes = {
     'typescript',
     'javascript',

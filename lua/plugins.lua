@@ -19,7 +19,7 @@ return {
       position = "bot",
       size = 15,
       prefix = "Term_",
-      startInserted = true,
+      startInserted = false,
       show_tabs = true,
       new_tab_mapping = "<C-t>",      -- Create new terminal
       jump_tab_mapping = "<C-$tab>",  -- Jump to tab terminal
