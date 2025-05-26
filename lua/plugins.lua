@@ -1,8 +1,9 @@
 return {
 -- Colorschemes
-  { 'rayes0/blossom.vim' },
   { "EdenEast/nightfox.nvim" },
-  { "webhooked/kanso.nvim", lazy = false },
+  { "slugbyte/lackluster.nvim",
+    lazy = false, priority = 1000, opts={}
+  },
 
 -- UI Enhancements
   { "nvim-tree/nvim-web-devicons" },
@@ -11,22 +12,14 @@ return {
   { "brenoprata10/nvim-highlight-colors",
     opts = { render = 'virtual', virtual_symbol = '■' }
   },
-  { "lukas-reineke/indent-blankline.nvim",
-    main = "ibl", opts = {},
-  },
   { "CRAG666/betterTerm.nvim",
     opts = {
       position = "bot",
       size = 15,
-      prefix = "Term_",
       startInserted = false,
       show_tabs = true,
-      new_tab_mapping = "<C-t>",      -- Create new terminal
-      jump_tab_mapping = "<C-$tab>",  -- Jump to tab terminal
-      active_tab_hl = "TabLineSel",   -- Highlight group for active tab
-      inactive_tab_hl = "TabLine",    -- Highlight group for inactive tabs
-      new_tab_hl = "BetterTermSymbol", -- Highlight group for new term
-      new_tab_icon = "+"              -- Icon for new term
+      new_tab_mapping = "<C-t>",
+      new_tab_icon = "+"
     },
   },
 
@@ -45,10 +38,7 @@ return {
 --mini.nvim
   { 'echasnovski/mini.comment', version = false, opts={} },
   { 'echasnovski/mini.pairs', version = false, opts={} },
-  --install fd, ripgrep, or git
-  { 'echasnovski/mini.pick', version = false, opts={} },
   { 'echasnovski/mini.cursorword', version = false, opts={} },
-  { 'echasnovski/mini.notify', version = false, opts={} },
 
 --snacks
   { "folke/snacks.nvim",
@@ -56,6 +46,27 @@ return {
     opts = {
       quickfile = { enabled = true },
       statuscolumn = { enabled = true },
+      notifier = { enabled = true },
+      dim = { enabled = true },
+      indent = { enabled = true },
+      picker = { enabled = true, layout = { preset = "select" } },
+      dashboard = {
+        enabled = true,
+        preset={
+          header=[[
+GWYNE'S NEOVIM 
+
+⣿⣿⠄⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⣿⣇⢻⣿⣿⣿⠄
+⣿⣿⠄⠄⠄⠄⠄⠄⠙⠿⣿⣿⣿⣿⣿⠄⢿⣿⣿⡄
+⣦⡙⠳⠄⠄⠄⠄⠄⠄⢀⣠⣤⣀⣈⠙⠃⠄⠿⢇⡇
+⣿⡇⠄⠄⠄⠄⠄⣠⣶⣿⣿⣿⣿⣿⣿⣷⣆⡀⣼⡇
+⢿⣷⡀⠄⢀⣴⣾⣟⠉⠉⠉⠉⣽⣿⣿⣿⣿⠇⢹⠃
+⣎⢻⣷⠰⣿⣿⣿⣿⣦⣀⣀⣴⣿⣿⣿⠟⢫⡾⢸⠄
+⠿⣧⠙⢷⠙⠻⠿⢿⡿⠿⠿⠛⠋⠉⠄⠂⠘⠁⠞⠄
+⠑⣠⣤⣴⡖⠄⠿⣋⣉⣉⡁⠄⢾⣦⠄⠄⠄⠄⠄⠄
+          ]]
+        }
+      },
     },
   },
 

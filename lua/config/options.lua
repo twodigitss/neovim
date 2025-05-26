@@ -1,6 +1,6 @@
 -- VISUALS
 vim.o.showtabline = 0                -- Por defecto es 1, desactiva la barra de pestañas
-vim.cmd('colorscheme carbonfox')
+vim.cmd('colorscheme lackluster-mint')
 vim.cmd('syntax enable')             -- No es redundante, activa el resaltado de sintaxis
 
 vim.opt.fillchars = { eob = " " }
@@ -70,7 +70,7 @@ vim.o.splitbelow = true              -- Divide horizontalmente hacia abajo
 vim.o.splitright = true              -- Divide verticalmente hacia la derecha
 vim.o.scrolloff = 8                  -- Mantiene líneas visibles arriba/abajo del cursor
 vim.o.sidescrolloff = 8              -- Mantiene columnas visibles a izquierda/derecha del cursor
-vim.opt.wrap = false                 -- Desactiva el ajuste de línea
+-- vim.opt.wrap = false                 -- Desactiva el ajuste de línea
 
 -- Soporte para codificación y formato
 vim.o.fileencoding = 'utf-8'         -- Codificación de archivos predeterminada
