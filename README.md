@@ -4,5 +4,5 @@ This is the (neovim) <strong>configuration files</strong> of an ordinary guy wit
 ## How many plugins? 
 * <strong>20</strong> plugins managed with Lazy.nvim
 
-![Demo](./img/sample.png) 
+![Demo](./sample.png) 
 

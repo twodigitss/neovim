@@ -29,8 +29,8 @@ vim.o.smartcase = true               -- Búsqueda sensible cuando se usa mayúsc
 vim.o.smartindent = true             -- Indentación inteligente para código
 vim.o.copyindent = true              -- Copia estructura de indentación de líneas existentes
 -- vim.o.smarttab = true             -- Ya activado por defecto en Neovim
-vim.o.tabstop = 2                    -- Ancho visual de un tab
-vim.o.shiftwidth = 2                 -- Espacios para autoindentación
+vim.o.tabstop = 4                    -- Ancho visual de un tab
+vim.o.shiftwidth = 4                 -- Espacios para autoindentación
 
 -- FOLDS
 vim.o.viewoptions = 'folds,cursor'   -- Qué guardar en archivos de vista

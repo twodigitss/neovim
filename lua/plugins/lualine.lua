@@ -1,4 +1,4 @@
-local leftSeparator = '';
+local leftSeparator = '█';
 local rightSeparator = '█';
 
 return {
