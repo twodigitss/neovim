@@ -14,7 +14,7 @@ vim.api.nvim_set_keymap('n', '<Tab>',     ':tabnext<CR>', { noremap = true, sile
 -- VSCODE LIKE KEYSTROKES
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>",       { noremap = true, silent = true })
 --this is used by nvim0.11 lsp, but i dont remember what
-vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>a", { noremap = true, silent = true }) 
+vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>a", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-z>", "u",            { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-y>", "<C-r>",        { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-q>", ":q <CR>",      { noremap = true, silent = true })

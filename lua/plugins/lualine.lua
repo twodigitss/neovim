@@ -1,5 +1,5 @@
-local leftSeparator = '█';
-local rightSeparator = '█';
+local leftSeparator = '';
+local rightSeparator = '';
 
 return {
   "nvim-lualine/lualine.nvim",
@@ -12,7 +12,7 @@ return {
       theme = 'auto',
       component_separators = { left = "", right = ""},
       section_separators = { left = leftSeparator, right = rightSeparator},
-      --  left    █   //  right    █ 
+      --  left    █   //  right    █  
 
     },
     sections = {
