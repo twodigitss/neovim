@@ -1,14 +1,25 @@
---   typescript = {
---     cmd = { 'typescript-language-server', '--stdio' },
---     filetypes = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact' }
---   },
-
+---@brief
+---
+--- https://github.com/yioneko/vtsls
+---
+--- `vtsls` can be installed with npm:
+--- ```sh
+--- npm install -g @vtsls/language-server
+--- ```
+---
+--- To configure a TypeScript project, add a
+--- [`tsconfig.json`](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
+--- or [`jsconfig.json`](https://code.visualstudio.com/docs/languages/jsconfig) to
+--- the root of your project.
 return {
   cmd = { 'vtsls', '--stdio' },
   filetypes = {
-    'typescript',
     'javascript',
+    'javascriptreact',
+    'javascript.jsx',
+    'typescript',
     'typescriptreact',
-    'javascriptreact'
-  }
+    'typescript.tsx',
+  },
+  root_markers = { 'tsconfig.json', 'package.json', 'jsconfig.json', '.git' },
 }

@@ -56,8 +56,8 @@ vim.diagnostic.config(
   -- {virtual_lines = {current_line=true}}
 )
 
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('vtsls')
-vim.lsp.enable('pylsp')
-vim.lsp.enable('gopls')
-vim.lsp.enable('rust-analyzer')
+vim.lsp.enable({
+  'lua_ls','vtsls',
+  'pylsp','gopls',
+  'rust-analyzer'
+})

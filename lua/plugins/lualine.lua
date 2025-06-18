@@ -1,33 +1,54 @@
-local leftSeparator = '';
-local rightSeparator = '';
+--    left    █   //  right    █   
+local left  = '█';
+local right = '█';
 
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" }, -- Optional for icons
   opts = {
     options = {
-      disabled_filetypes = { 'packer' }, --, 'NvimTree'
+      disabled_filetypes = { 'Neotree' }, --, 'packer', 'NvimTree'
       globalstatus = true,
       icons_enabled = true,
       theme = 'auto',
-      component_separators = { left = "", right = ""},
-      section_separators = { left = leftSeparator, right = rightSeparator},
-      --  left    █   //  right    █  
-
+      component_separators = { left = "", right = ""},
+      section_separators = { left = left, right = right},
     },
     sections = {
-      lualine_a = {{'mode', icon = '', separator = { right = leftSeparator}}},
-      lualine_b = {{
-        'branch', 'diff', 'diagnostics',
-        icon = '',
-        separator = { right = leftSeparator},
-        draw_empty = true,
-        color = { bg = '#353535' }
+      lualine_a = {{
+        'mode',
+        icon = '',
+        separator = { right = left}
       }},
-      lualine_c = {'filename'},
-      lualine_x = {'encoding', 'fileformat', 'filetype'},
-      lualine_y = {'progress'},
-      lualine_z = {'location'}
+      lualine_b = {{
+        'filetype',
+        icon = '',
+        separator = { right = left},
+        color = { bg = '#191919' }
+      }},
+      lualine_c = {{
+        'filename',
+        icon = '',
+      }},
+      lualine_x = {
+        { 'diagnostics',
+          draw_empty = true
+        },
+        { 'branch',
+          icon = '',
+          draw_empty = true,
+          color = { bg = '#2f2f2f' }
+        },
+        { 'diff',
+          icon = '',
+          color = { bg = '#191919' },
+          draw_empty = true,
+        },
+      },
+      lualine_y = {
+        'encoding', 'fileformat',
+      },
+      lualine_z = {'location', 'progress'}
     }
   },
 

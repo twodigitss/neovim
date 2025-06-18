@@ -1,6 +1,5 @@
 return {
 -- Colorschemes
-  -- { "EdenEast/nightfox.nvim" },
   { "slugbyte/lackluster.nvim",
     lazy = false, priority = 1000, opts={}
   },
@@ -12,25 +11,17 @@ return {
   { "brenoprata10/nvim-highlight-colors",
     opts = { render = 'virtual', virtual_symbol = '■' }
   },
-  { "CRAG666/betterTerm.nvim",
-    opts = {
-      position = "bot",
-      size = 15,
-      startInserted = false,
-      show_tabs = true,
-      new_tab_mapping = "<C-t>",
-      new_tab_icon = "+"
-    },
+  { "nvzone/floaterm",
+    dependencies = "nvzone/volt",
+    opts = {}, cmd = "FloatermToggle",
   },
 
--- Completion
-  { "github/copilot.vim" },
+  -- Completion
   { "windwp/nvim-ts-autotag",
     opts = {per_filetype = {["html"] = {enable_close = true}}}
   },
-  { 'saghen/blink.cmp',
+  { 'saghen/blink.cmp', version = '*',
     dependencies = { 'rafamadriz/friendly-snippets' },
-    version = '*',
     opts = { keymap = { preset = 'enter' } },
     opts_extend = { "sources.default" }
   },
@@ -47,7 +38,6 @@ return {
       quickfile = { enabled = true },
       statuscolumn = { enabled = true },
       notifier = { enabled = true },
-      dim = { enabled = true },
       indent = { enabled = true },
       picker = { enabled = true, layout = { preset = "select" } },
       dashboard = {

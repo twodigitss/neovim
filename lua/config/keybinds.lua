@@ -1,9 +1,5 @@
 -- TERMINAL
-vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>',                              { noremap = true }) --fixed default behavior
-
--- COMMENTING ON REACT COMPONENTS
-vim.api.nvim_set_keymap('n', '<leader>c', '_Di{}<Esc>i/**/<Esc>hhp_v=',  { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>C', '_xxx$xxxx_v=',  { noremap = true, silent = true })
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true }) --fixed default behavior
 
 -- TAB / WINDOWS
 vim.api.nvim_set_keymap('n', '<leader>v', ':vsplit<CR>',  { noremap = true, silent = true })
@@ -27,19 +23,14 @@ vim.keymap.set("n", "<C-Up>",     "<C-w>k", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-Right>",  "<C-w>l", { noremap = true, silent = true })
 
 -- PLUGINS
-vim.api.nvim_set_keymap('n', '[d',        '<cmd>lua vim.diagnostic.goto_prev()<CR>',  { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', ']d',        '<cmd>lua vim.diagnostic.goto_next()<CR>',  { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>',  { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>',  { noremap = true, silent = true })
 
-local betterTerm = require('betterTerm')
-vim.keymap.set("n", "<leader>;", betterTerm.open, { desc = "Open terminal"})
-vim.keymap.set("t", "<C-t>", betterTerm.select, { desc = "Select terminal"})
+vim.keymap.set("n", "<leader>;", ':FloatermToggle<CR>', { desc = "Open terminal"})
 
-vim.api.nvim_set_keymap('n', '<C-n>',     ':Neotree toggle<CR>',                      { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>f', ':lua Snacks.picker.files(opts)<CR>',       { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>g', ':lua Snacks.picker.grep(opts)<CR>',       { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>m', ':lua Snacks.picker.marks(opts)<CR>',       { noremap = true, silent = true })
-
-vim.keymap.set('n', '<leader>dd', function() Snacks.dim.enable() end, { desc = 'Dim enable' })
-vim.keymap.set('n', '<leader>du', function() Snacks.dim.disable() end, { desc = 'Dim disable' })
 
