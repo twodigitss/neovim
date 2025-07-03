@@ -1,0 +1,25 @@
+### Get all users
+GET https://jsonplaceholder.typicode.com/posts
+Accept: application/json
+
+### Create a new post
+POST https://jsonplaceholder.typicode.com/posts
+Content-Type: application/json
+X-Custom-Header: MyValue
+
+{"title": "hello"}
+
+### Delete a post
+DELETE https://jsonplaceholder.typicode.com/posts/1
+
+### Slow response
+GET https://fakeresponder.com/?sleep=1000
+
+### Postman echo
+POST https://postman-echo.com/post?hola=que&tal=true
+Content-Type: application/json
+Custom-Header: sardina
+
+["lol"]
+
+

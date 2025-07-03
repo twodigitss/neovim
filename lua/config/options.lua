@@ -1,6 +1,7 @@
 -- VISUALS
 vim.o.showtabline = 0                -- Por defecto es 1, desactiva la barra de pestañas
-vim.o.tabline = "%!v:lua.MyTabLine()"
+-- vim.opt.cmdheight = 0                -- Esconde la barra del MODE y otras cosas
+-- vim.o.tabline = "%!v:lua.MyTabLine()"
 vim.cmd('colorscheme lackluster-mint')
 vim.cmd('syntax enable')             -- No es redundante, activa el resaltado de sintaxis
 

@@ -28,21 +28,21 @@ return {
       }},
       lualine_c = {{
         'filename',
-        icon = '',
+        icon = '',
       }},
       lualine_x = {
         { 'diagnostics',
           draw_empty = true
         },
+        { 'diff',
+          icon = '',
+          color = { bg = '#1e1e1e' },
+          draw_empty = true,
+        },
         { 'branch',
           icon = '',
           draw_empty = true,
-          color = { bg = '#2f2f2f' }
-        },
-        { 'diff',
-          icon = '',
           color = { bg = '#191919' },
-          draw_empty = true,
         },
       },
       lualine_y = {

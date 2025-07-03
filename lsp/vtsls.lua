@@ -13,6 +13,7 @@
 --- the root of your project.
 return {
   cmd = { 'vtsls', '--stdio' },
+  root_markers = { 'tsconfig.json', 'package.json', 'jsconfig.json', '.git' },
   filetypes = {
     'javascript',
     'javascriptreact',
@@ -20,6 +21,6 @@ return {
     'typescript',
     'typescriptreact',
     'typescript.tsx',
+    'vue'
   },
-  root_markers = { 'tsconfig.json', 'package.json', 'jsconfig.json', '.git' },
 }

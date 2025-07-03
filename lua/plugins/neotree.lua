@@ -6,15 +6,20 @@ return {
     "MunifTanjim/nui.nvim",
   },
   opts = {
+    sources = {
+      "filesystem", "buffers", "git_status"
+    },
+    filesystem = {
+      follow_current_file = { enabled = true },
+    },
     window = {
       width = 35,
-      position = "left"
+      position = "left",
     },
-    position = "right",
     default_component_configs = {
       indent = {
-        expander_collapsed = "", --
-        expander_expanded = "", --
+        expander_collapsed = "", --
+        expander_expanded = "", --
       },
       git_status = {
         --TODO:the word highligh at != unchanged files

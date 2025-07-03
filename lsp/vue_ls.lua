@@ -74,6 +74,11 @@
 local util = require 'lspconfig.util'
 
 return {
+  settings = {
+    emmet = {
+      showExpandedAbbreviation = "never",
+    },
+  },
   cmd = { 'vue-language-server', '--stdio' },
   filetypes = { 'vue' },
   root_markers = { 'package.json' },

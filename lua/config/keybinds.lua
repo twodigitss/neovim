@@ -33,4 +33,6 @@ vim.api.nvim_set_keymap('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, s
 vim.api.nvim_set_keymap('n', '<leader>f', ':lua Snacks.picker.files(opts)<CR>',       { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>g', ':lua Snacks.picker.grep(opts)<CR>',       { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>m', ':lua Snacks.picker.marks(opts)<CR>',       { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>x', ':HolaSend<CR>',  { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>X', ':HolaClose<CR>', { noremap = true, silent = true })
 

@@ -57,7 +57,6 @@ vim.diagnostic.config(
 )
 
 vim.lsp.enable({
-  'lua_ls','vtsls',
-  'pylsp','gopls',
-  'rust-analyzer'
+  'lua_ls', 'vtsls', 'pylsp',
+  'gopls', 'rust-analyzer', 'jdtls'
 })
