@@ -1,19 +1,19 @@
 return {
 -- Colorschemes
-  { "slugbyte/lackluster.nvim", lazy = false, opts={} },
+  { "slugbyte/lackluster.nvim", lazy = false, priority = 1000, opts={} },
+  -- { "webhooked/kanso.nvim", lazy = false, priority = 1000 },
 
 -- UI Enhancements
   { 'xiyaowong/transparent.nvim', opts={} },
   { 'Bekaboo/dropbar.nvim', opts={} },
   { 'lewis6991/gitsigns.nvim' },
   { "brenoprata10/nvim-highlight-colors",
-    opts = { render = 'virtual', virtual_symbol = '󱡓' }
-    -- opts = { render = 'virtual', virtual_symbol = '■' }
+    opts = { render = 'virtual', virtual_symbol = '■' }
   },
 
 -- Completion
-  { "tronikelis/ts-autotag.nvim",
-    opts = {}, event = "VeryLazy",
+{ "windwp/nvim-ts-autotag",
+    opts = {per_filetype = {["html"] = {enable_close = true}}}
   },
   { "malev/hola.nvim", desc = "rest client for nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -22,12 +22,18 @@ return {
     dependencies = { 'rafamadriz/friendly-snippets' },
     opts = {
       keymap = { preset = 'enter' },
+      sources = {default = { 'lsp', 'path', 'snippets', 'buffer' }},
       completion = {
-        ghost_text = { enabled = false },
-        documentation = {
-          auto_show = true,
-          auto_show_delay_ms = 200,
+        menu = {
+          border = 'single',
+          draw = {
+            columns = {
+              { "label", "label_description", gap = 3 },
+              { "kind_icon", "kind", gap = 1 }
+            },
+          }
         },
+        documentation = { auto_show = true, window = { border = 'single' } },
       },
     },
     opts_extend = { "sources.default" }
@@ -46,7 +52,8 @@ return {
       statuscolumn = { enabled = true },
       notifier = { enabled = true },
       indent = { enabled = true },
-      picker = { enabled = true, layout = { preset = "select" } },
+      input = { enabled = true },
+      picker = { enabled = true, layout = { preset = "select" }, exclude = { ".git", "node_modules"} },
       dashboard = {
         enabled = true,
         width = 70,

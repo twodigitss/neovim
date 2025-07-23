@@ -2,8 +2,12 @@
 vim.o.showtabline = 0                -- Por defecto es 1, desactiva la barra de pestañas
 -- vim.opt.cmdheight = 0                -- Esconde la barra del MODE y otras cosas
 -- vim.o.tabline = "%!v:lua.MyTabLine()"
+
+-- because colorizer plugin asked
+vim.opt.termguicolors = true
+vim.cmd('syntax enable')
+vim.cmd('colorscheme ron')
 vim.cmd('colorscheme lackluster-mint')
-vim.cmd('syntax enable')             -- No es redundante, activa el resaltado de sintaxis
 
 vim.opt.fillchars = { eob = " " }
 vim.opt.fillchars:append({ vert = " ", fold = " " })

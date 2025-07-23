@@ -1,6 +1,3 @@
--- because colorizer plugin asked
-vim.opt.termguicolors = true
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -51,10 +48,10 @@ require("config")
 -- })
 
 --virtual_text o virtual_lines para mas fancy
-vim.diagnostic.config(
+-- vim.diagnostic.config(
   -- replaced by the CursorHold thing in autocmds
   -- {virtual_lines = {current_line=true}}
-)
+-- )
 
 vim.lsp.enable({
   'lua_ls', 'vtsls', 'pylsp',

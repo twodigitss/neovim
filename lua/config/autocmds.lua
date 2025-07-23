@@ -20,7 +20,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
 end
 })
 
--- ITALICS FOR COMMENTS AND KEYWORDS
 vim.cmd [[
   hi Comment cterm=italic gui=italic
   hi Keyword cterm=italic gui=italic
