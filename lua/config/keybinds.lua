@@ -33,4 +33,5 @@ vim.api.nvim_set_keymap('n', '<leader>g', ':lua Snacks.picker.grep(opts)<CR>',  
 vim.api.nvim_set_keymap('n', '<leader>m', ':lua Snacks.picker.marks(opts)<CR>',       { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>x', ':HolaSend<CR>',  { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>X', ':HolaClose<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>l', ':Lazy sync<CR>', { noremap = true, silent = true })
 

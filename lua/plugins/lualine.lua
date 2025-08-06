@@ -1,6 +1,6 @@
 --    left    █   //  right    █   
 local left  = '█';
-local right = '█';
+local right = '';
 
 return {
   "nvim-lualine/lualine.nvim",
@@ -17,7 +17,7 @@ return {
     sections = {
       lualine_a = {{
         'mode',
-        icon = '',
+        icon = ' ',
         separator = { right = left}
       }},
       lualine_b = {{

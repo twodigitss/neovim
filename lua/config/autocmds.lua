@@ -1,13 +1,13 @@
 -- OPEN NVIMTREE AUTOMATICALLY WHEN OPENING A FILE
--- vim.api.nvim_create_autocmd("VimEnter", {
---   pattern = "*",
---   callback = function()
---     if vim.fn.argc() == 1 and vim.fn.isdirectory(vim.fn.argv(0)) == 0 then
---       vim.cmd("Neotree")
---       vim.cmd("wincmd p")
---     end
---   end
--- })
+vim.api.nvim_create_autocmd("VimEnter", {
+  pattern = "*",
+  callback = function()
+    if vim.fn.argc() == 1 and vim.fn.isdirectory(vim.fn.argv(0)) == 0 then
+      vim.cmd("Neotree")
+      vim.cmd("wincmd p")
+    end
+  end
+})
 
 -- CLOSE NVIMTREE WHEN ITS THE LAST OPENED WINDOW
 vim.api.nvim_create_autocmd("BufEnter", {
