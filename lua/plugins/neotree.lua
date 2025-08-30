@@ -1,5 +1,6 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
+  enabled = true,
   branch = "v3.x", lazy = false,
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -17,7 +18,7 @@ return {
       follow_current_file = { enabled = true },
     },
     window = {
-      width = 35,
+      width = 30,
       position = "left",
     },
     default_component_configs = {

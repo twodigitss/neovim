@@ -6,6 +6,11 @@ vim.api.nvim_set_keymap('n', '<leader>v', ':vsplit<CR>',  { noremap = true, sile
 vim.api.nvim_set_keymap('n', '<leader>s', ':split<CR>',   { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-t>',     ':tabnew<CR>',  { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Tab>',     ':tabnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-h>',     '<C-W>> <CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-l>',     '<C-W>< <CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-k>',     '<C-W>+ <CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-j>',     '<C-W>- <CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-=>',     '<C-W>= <CR>', { noremap = true, silent = true })
 
 -- VSCODE LIKE KEYSTROKES
 vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>",       { noremap = true, silent = true })
@@ -34,4 +39,3 @@ vim.api.nvim_set_keymap('n', '<leader>m', ':lua Snacks.picker.marks(opts)<CR>', 
 vim.api.nvim_set_keymap('n', '<leader>x', ':HolaSend<CR>',  { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>X', ':HolaClose<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>l', ':Lazy sync<CR>', { noremap = true, silent = true })
-

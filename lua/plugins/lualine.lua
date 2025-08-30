@@ -1,6 +1,6 @@
 --    left    █   //  right    █   
 local left  = '█';
-local right = '';
+local right = '█';
 
 return {
   "nvim-lualine/lualine.nvim",
@@ -11,20 +11,20 @@ return {
       globalstatus = true,
       icons_enabled = true,
       theme = 'auto',
-      component_separators = { left = "", right = ""},
+      component_separators = { left = " ", right = " "},
       section_separators = { left = left, right = right},
     },
     sections = {
       lualine_a = {{
         'mode',
-        icon = ' ',
+        icon = '',
         separator = { right = left}
       }},
       lualine_b = {{
         'filetype',
         icon = '',
         separator = { right = left},
-        color = { bg = '#191919' }
+        -- color = { bg = '#191919' }
       }},
       lualine_c = {{
         'filename',
@@ -36,13 +36,13 @@ return {
         },
         { 'diff',
           icon = '',
-          color = { bg = '#1e1e1e' },
+          -- color = { bg = '#1e1e1e' },
           draw_empty = true,
         },
         { 'branch',
           icon = '',
           draw_empty = true,
-          color = { bg = '#191919' },
+          -- color = { bg = '#191919' },
         },
       },
       lualine_y = {
