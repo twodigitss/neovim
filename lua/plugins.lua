@@ -17,6 +17,16 @@ return{
       })
     end
   },
+  {
+    "nvzone/floaterm", branch = "dev",
+    cmd = "FloatermToggle",
+    dependencies = "nvzone/volt",
+    opts = {
+      border = true, size = { h = 60, w = 70 },
+      mappings = { sidebar = nil, term = nil},
+      terminals = { { name = ">_" }, },
+    },
+  },
 
   --mini.nvim
   { 'echasnovski/mini.comment', version = false, opts={} },

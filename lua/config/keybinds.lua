@@ -18,8 +18,8 @@ vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>",       { noremap = true, silent =
 vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w<CR>a", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-z>", "u",            { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-y>", "<C-r>",        { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-q>", ":q <CR>",      { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-Q>", ":q! <CR>",     { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-q>", "exit<CR>",      { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-Q>", ":q!<CR>",     { noremap = true, silent = true })
 
 -- SWITCHING SPLITS
 vim.keymap.set("n", "<C-Left>",   "<C-w>h", { noremap = true, silent = true })
@@ -33,9 +33,10 @@ vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>',  {
 
 vim.api.nvim_set_keymap('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('n', '<leader>l', ':FloatermToggle<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>f', ':lua Snacks.picker.files(opts)<CR>',       { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>g', ':lua Snacks.picker.grep(opts)<CR>',       { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>m', ':lua Snacks.picker.marks(opts)<CR>',       { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>x', ':HolaSend<CR>',  { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>X', ':HolaClose<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>l', ':Lazy sync<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>L', ':Lazy sync<CR>', { noremap = true, silent = true })
