@@ -15,27 +15,27 @@ return {
         Constructor = '󰒓',
 
         Field = '󰜢',
-        Variable = '',
+        Variable = '󰒠',
         Property = '󰖷',
 
-        Class = '󱡠',
-        Interface = '',
+        Class = '', --󱡠
+        Interface = '',
         Struct = '󰅩',
-        Module = '',
+        Module = '',
 
         Unit = '󰪚',
         Value = '󰓻',
-        Enum = '',
+        Enum = '',
         EnumMember = '󰓻',
 
         Keyword = '󰍛',
         Constant = '󰏿',
 
-        Snippet = '',
+        Snippet = '',
         Color = '󰏘',
         File = '󰈔',
         Reference = '󰬲',
-        Folder = '',
+        Folder = '󰉋',
         Event = '󱐋',
         Operator = '󰪚',
         TypeParameter = '󰬛',
@@ -48,7 +48,7 @@ return {
         draw = {
           columns = {
             { "label", "label_description", gap = 3 },
-            { "kind_icon", "kind", gap = 2 },
+            { "kind_icon", "kind", gap = 1 },
           },
         }
       },
