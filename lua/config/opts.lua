@@ -13,7 +13,8 @@ vim.opt.signcolumn = "yes:1"         -- Muestra columna de signos con ancho 1
 
 vim.opt.number = true                -- Muestra números de línea
 vim.opt.relativenumber = true    -- Valor por defecto, removido
-vim.wo.cursorline = true             -- Resalta la línea actual del cursor
+vim.wo.cursorline = false             -- Resalta la línea actual del cursor
+
 vim.o.showmatch = true               -- Resalta paréntesis/llaves coincidentes
 vim.o.expandtab = true               -- Convierte tabs en espacios
 vim.o.hlsearch = true                -- Resalta resultados de búsqueda

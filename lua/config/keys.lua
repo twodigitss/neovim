@@ -27,8 +27,9 @@ vim.api.nvim_set_keymap("n", "<C-Q>", ":q!<CR>",     { noremap = true, silent = 
 -- vim.keymap.set("n", "<C-Right>", "<C-w>l", { noremap = true, silent = true })
 
 -- PLUGINS
-vim.api.nvim_set_keymap('n', '<leader>d', '<cmd>lua vim.diagnostic.goto_prev()<CR>',  { noremap = true, silent = true, desc="Prev Diagnostic" })
-vim.api.nvim_set_keymap('n', '<leader>n', '<cmd>lua vim.diagnostic.goto_next()<CR>',  { noremap = true, silent = true, desc="Next Diagnostic" })
+vim.api.nvim_set_keymap('n', '<leader>z', '<cmd>lua vim.diagnostic.jump({ count = -1 })<CR>',  { noremap = true, silent = true, desc="Prev Diagnostic" })
+vim.api.nvim_set_keymap('n', '<leader>x', '<cmd>lua vim.diagnostic.jump({ count = 1 })<CR>',  { noremap = true, silent = true, desc="Next Diagnostic" })
+vim.api.nvim_set_keymap('n', '<leader>.', ':lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true, desc="LSP Actions" })
 
 vim.api.nvim_set_keymap('n', '<C-n>', ':Neotree toggle<CR>', { noremap = true, silent = true })
 

@@ -1,52 +1,52 @@
-vim.cmd [[
-  hi Comment cterm=italic gui=italic
-  hi Keyword cterm=italic gui=italic
-  highlight Folded guibg=NONE ctermbg=NONE
+vim.api.nvim_set_hl(0, "Comment", { fg = "#8891a8", italic = true })
+vim.api.nvim_set_hl(0, "Folded", { bg = "NONE", ctermbg = "NONE" })
+vim.api.nvim_set_hl(0, "Keyword", { fg = "#92BAFF", bold = true, italic = true })
+vim.api.nvim_set_hl(0, "@variable", { fg = "#B3D8FE", bold = true })
 
-  highlight! link NeoTreeGitAdded NormalNC
-  highlight! link NeoTreeGitConflict NormalNC
-  highlight! link NeoTreeGitDeleted NormalNC
-  highlight! link NeoTreeGitIgnored NormalNC
-  highlight! link NeoTreeGitModified NormalNC
-  highlight! link NeoTreeGitUntracked NormalNC
-  highlight NeoTreeDirectoryName guifg=White
+vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#121212", bg = "#92BAFF", bold = true })
+vim.api.nvim_set_hl(0, "TabLine", { fg = "#f5f5f5", bg = "#14161B" })
+vim.api.nvim_set_hl(0, "TabLineFill", { bg = "#1d2021" })
 
-  highlight TabLineSel guifg=#121212 guibg=#92BAFF gui=bold
-  highlight TabLine guifg=#f5f5f5 guibg=#14161B gui=NONE
-  highlight TabLineFill guifg=NONE guibg=#1d2021 gui=NONE
+vim.api.nvim_set_hl(0, "NeoTreeDirectoryName", { fg = "White" })
+vim.api.nvim_set_hl(0, "NeoTreeGitAdded", { link = "NormalNC" })
+vim.api.nvim_set_hl(0, "NeoTreeGitConflict", { link = "NormalNC" })
+vim.api.nvim_set_hl(0, "NeoTreeGitDeleted", { link = "NormalNC" })
+vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { link = "NormalNC" })
+vim.api.nvim_set_hl(0, "NeoTreeGitModified", { link = "NormalNC" })
+vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { link = "NormalNC" })
 
-  "AUTOCMDS TO REMEMBER FOLDS
-  " Set a custom viewdir to avoid conflicts
-  set viewdir=~/.config/nvim/.view//
+-- Folds Persistence: Save and load views automatically
+vim.opt.viewdir = vim.fn.expand("~/.config/nvim/.view//")
+local fold_group = vim.api.nvim_create_augroup("remember_folds", { clear = true })
 
-  augroup remember_folds
-    autocmd!
-    autocmd BufWinLeave * if expand('%') != '' | mkview | endif
-    autocmd BufWinEnter * if expand('%') != '' | silent! loadview | endif
-    autocmd BufWritePost * if expand('%') != '' | mkview | endif
-  augroup END
-]]
+vim.api.nvim_create_autocmd({ "BufWinLeave", "BufWritePost" }, {
+  group = fold_group,
+  pattern = "?*",
+  command = "silent! mkview",
+})
 
--- Después de que cargue el colorscheme
--- vim.api.nvim_set_hl(0, "goDeclaration", { fg = "#61afef", bold = true })
--- vim.api.nvim_set_hl(0, "goDeclType", { fg = "#98c379" })
-vim.api.nvim_set_hl(0, "Keyword", { fg = "#92BAFF", bold = true })
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  group = fold_group,
+  pattern = "?*",
+  command = "silent! loadview",
+})
+
 
 -- Show errors and warnings in a floating window
 vim.api.nvim_create_autocmd("CursorHold", {
-    callback = function()
-        vim.diagnostic.open_float(nil, {
-          focusable = false,
-          source = "if_many",
-          border = "none",
-          header = "  Diagnostics:",
-          prefix = " ",
-          suffix = " ",
-          format = function(diag)
-            return " " .. diag.message .. " "
-          end,
-        })
-    end,
+  callback = function()
+    vim.diagnostic.open_float(nil, {
+      focusable = false,
+      source = "if_many",
+      border = "none",
+      header = "  Diagnostics:",
+      prefix = " ",
+      suffix = " ",
+      format = function(diag)
+        return " " .. diag.message .. " "
+      end,
+    })
+  end,
 })
 
 vim.api.nvim_create_autocmd("LspProgress", {
@@ -58,7 +58,7 @@ vim.api.nvim_create_autocmd("LspProgress", {
       title = "LSP",
       opts = function(notif)
         notif.icon = ev.data.params.value.kind == "end" and " "
-          or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
+        or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
       end,
     })
   end,
