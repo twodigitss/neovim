@@ -1,15 +1,19 @@
 local Sections = {
-  "Quick Actions",
-  "Built in",
-  "Plugins"
+  "Search  ",
+  "Built in  ",
+  "Plugins   "
 }
 
-local entries = {
-  { "NeoTree",      "󰙅",  ":Neotree dir=./",                  Sections[3] },
-  { "Recent Files", "",  ":lua Snacks.picker.recent()",      Sections[1] },
-  { "Files",        "",  ":lua Snacks.picker.files(opts)",   Sections[1] },
-  { "Search Text",  "󰘎",  ":lua Snacks.picker.grep(opts)",    Sections[1] },
-  { "New File",     "",  ":ene | startinsert",               Sections[2] },
+local entries = { --they are in order of appearance btw
+
+  { "Recent",       "",  ":lua Snacks.picker.recent()",      Sections[1] }, --
+  { "Files",        "",  ":lua Snacks.picker.files(opts)",   Sections[1] }, --
+  { "Text",         "",  ":lua Snacks.picker.grep(opts)",    Sections[1] }, --󰘎
+
+  { "NeoTree",      "󰉓",  ":Neotree dir=./",                  Sections[3] }, --󰙅
+  -- { "Lazy",         "󰒲",  ":Lazy",                            Sections[3] }, --󰙅
+
+  { "New File",     "󱇬",  ":ene | startinsert",               Sections[2] }, --
   { "Quit",         "󰈆",  ":qa",                              Sections[2] },
 }
 
@@ -55,14 +59,14 @@ return {
     -- `tostring` (use `\n` to display several lines). If function, it is
     -- evaluated first. If `nil` (default), polite greeting will be used.
     header = [[
-    ||\\ ||
-    || \\||
-    ||  \||
+                  ||\\ ||
+                  || \\||
+                  ||  \||
 
-    NVIM v0.12.0
+                NVIM v0.12.0
 
-    Nvim is open source and freely distributable
-    https://neovim.io/#chat
+Nvim is open source and freely distributable
+           https://neovim.io/#chat
     ]],
 
     -- Footer to be displayed after items. Converted to single string via

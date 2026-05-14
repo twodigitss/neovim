@@ -2,6 +2,9 @@ vim.api.nvim_set_hl(0, "Comment", { fg = "#8891a8", italic = true })
 vim.api.nvim_set_hl(0, "Folded", { bg = "NONE", ctermbg = "NONE" })
 vim.api.nvim_set_hl(0, "Keyword", { fg = "#92BAFF", bold = true, italic = true })
 vim.api.nvim_set_hl(0, "@variable", { fg = "#B3D8FE", bold = true })
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "#0A0A0D" })
+
+
 
 vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#121212", bg = "#92BAFF", bold = true })
 vim.api.nvim_set_hl(0, "TabLine", { fg = "#f5f5f5", bg = "#14161B" })
@@ -14,6 +17,8 @@ vim.api.nvim_set_hl(0, "NeoTreeGitDeleted", { link = "NormalNC" })
 vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { link = "NormalNC" })
 vim.api.nvim_set_hl(0, "NeoTreeGitModified", { link = "NormalNC" })
 vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { link = "NormalNC" })
+
+vim.api.nvim_set_hl(0, "MiniStarterItemPrefix", { fg = "#92BAFF" })
 
 -- Folds Persistence: Save and load views automatically
 vim.opt.viewdir = vim.fn.expand("~/.config/nvim/.view//")

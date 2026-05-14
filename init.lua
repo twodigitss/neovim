@@ -10,5 +10,6 @@ vim.lsp.enable({
   'angularls',
   'gopls',
   'rust-analyzer',
-  'jdtls'
+  'jdtls',
+  "postgres_lsp",
 })
