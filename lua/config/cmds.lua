@@ -3,8 +3,8 @@ vim.api.nvim_set_hl(0, "Folded", { bg = "NONE", ctermbg = "NONE" })
 vim.api.nvim_set_hl(0, "Keyword", { fg = "#92BAFF", bold = true, italic = true })
 vim.api.nvim_set_hl(0, "@variable", { fg = "#B3D8FE", bold = true })
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "#0A0A0D" })
-
-
+vim.api.nvim_set_hl(0, "SnacksPicker", { bg = "#111217" })
+vim.api.nvim_set_hl(0, "SnacksPickerBorder", { fg = "#B3D8FE", bg = "none" } )
 
 vim.api.nvim_set_hl(0, "TabLineSel", { fg = "#121212", bg = "#92BAFF", bold = true })
 vim.api.nvim_set_hl(0, "TabLine", { fg = "#f5f5f5", bg = "#14161B" })
@@ -54,6 +54,7 @@ vim.api.nvim_create_autocmd("CursorHold", {
   end,
 })
 
+-- LSP progress floating notification
 vim.api.nvim_create_autocmd("LspProgress", {
   ---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
   callback = function(ev)
@@ -69,3 +70,16 @@ vim.api.nvim_create_autocmd("LspProgress", {
   end,
 })
 
+-- replacing Diagnostic with icons instead of single chars.
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR]   = "󰅚 ",
+      [vim.diagnostic.severity.WARN]    = "󰀪 ",
+      [vim.diagnostic.severity.HINT]    = "󰌶",
+      [vim.diagnostic.severity.INFO]    = "",
+    },
+    linehl = {},
+    numhl = {},
+  },
+})

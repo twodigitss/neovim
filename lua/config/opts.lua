@@ -8,6 +8,7 @@ vim.cmd('colorscheme default')
 vim.opt.fillchars = { eob = " " }
 vim.opt.fillchars:append({ vert = " ", fold = " " })
 vim.g.mapleader = " "                -- Importante: define la tecla líder
+vim.opt.clipboard = 'unnamedplus'    -- Buffer y clipboard unificados 
 
 vim.opt.signcolumn = "yes:1"         -- Muestra columna de signos con ancho 1
 
