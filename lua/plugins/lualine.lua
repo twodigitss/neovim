@@ -24,7 +24,7 @@ return {
     sections = {
       lualine_a = {{
         'mode',
-        icon = '',
+        icon = '',
         separator = { right = left}
       }},
       lualine_b = {{

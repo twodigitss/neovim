@@ -4,6 +4,7 @@ vim.o.showtabline = 1                -- Por defecto es 1, desactiva la barra de 
 
 vim.opt.termguicolors = true
 vim.cmd('colorscheme default')
+vim.o.winborder = 'rounded'
 
 vim.opt.fillchars = { eob = " " }
 vim.opt.fillchars:append({ vert = " ", fold = " " })

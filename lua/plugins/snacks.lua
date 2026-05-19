@@ -3,8 +3,18 @@ return {
   priority = 1000, lazy = false,
   opts = {
     quickfile = { enabled = true },
-    statuscolumn = { enabled = true },
+    -- statuscolumn = { enabled = true },
     notifier = { enabled = true },
+    zen = { 
+      enabled = true,
+      toggles = {
+        dim = true,
+        git_signs = true,
+        -- mini_diff_signs = true,
+        diagnostics = true,
+        inlay_hints = true,
+      },
+    },
     indent = { 
       enabled = true,
       char = "│",

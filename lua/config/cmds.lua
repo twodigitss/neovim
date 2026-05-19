@@ -19,6 +19,7 @@ vim.api.nvim_set_hl(0, "NeoTreeGitModified", { link = "NormalNC" })
 vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { link = "NormalNC" })
 
 vim.api.nvim_set_hl(0, "MiniStarterItemPrefix", { fg = "#92BAFF" })
+-- vim.api.nvim_set_hl(0, "Type", { fg = "#B3D8FE", bold = false })
 
 -- Folds Persistence: Save and load views automatically
 vim.opt.viewdir = vim.fn.expand("~/.config/nvim/.view//")
@@ -34,24 +35,6 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
   group = fold_group,
   pattern = "?*",
   command = "silent! loadview",
-})
-
-
--- Show errors and warnings in a floating window
-vim.api.nvim_create_autocmd("CursorHold", {
-  callback = function()
-    vim.diagnostic.open_float(nil, {
-      focusable = false,
-      source = "if_many",
-      border = "none",
-      header = "  Diagnostics:",
-      prefix = " ",
-      suffix = " ",
-      format = function(diag)
-        return " " .. diag.message .. " "
-      end,
-    })
-  end,
 })
 
 -- LSP progress floating notification
@@ -72,6 +55,9 @@ vim.api.nvim_create_autocmd("LspProgress", {
 
 -- replacing Diagnostic with icons instead of single chars.
 vim.diagnostic.config({
+  virtual_text = false, 
+  virtual_lines = { current_line = true }, 
+  float = { border = "rounded"},
   signs = {
     text = {
       [vim.diagnostic.severity.ERROR]   = "󰅚 ",
