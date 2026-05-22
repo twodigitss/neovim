@@ -1,6 +1,7 @@
 return {
+  { 'everviolet/nvim' },
   { 'alvarosevilla95/luatab.nvim',  --tabs only (no buffers)
-    opts={ separator = function() return ' ' end, } 
+    opts={ separator = function() return ' ' end } 
   },
 
   { 'lewis6991/gitsigns.nvim', opts={} }, --git diff indicator
@@ -11,6 +12,7 @@ return {
     dependencies = { "SmiteshP/nvim-navic", },
   },
 
+  { "folke/which-key.nvim", event = "VeryLazy", opts = {} },
   { 'nvim-mini/mini.pairs', opts={} }, --autoclose ([{}])
   { 'windwp/nvim-ts-autotag', opts={} }, -- autoclose but for html
   { "folke/todo-comments.nvim", --comment hightlighting TODO, WARN, BUG, FIX, etc.
@@ -19,13 +21,13 @@ return {
       signs = true,
       sign_priority = 8,
       keywords = {
-        FIX =  { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, },
-        TODO = { icon = " ", color = "info" },
-        HACK = { icon = " ", color = "warning" },
-        WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-        PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE", "PERF" } },
-        NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
-        TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+        FIX =  { icon = "", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, },
+        TODO = { icon = "", color = "info" },
+        HACK = { icon = "", color = "warning" },
+        WARN = { icon = "", color = "warning", alt = { "WARNING", "XXX" } },
+        PERF = { icon = "", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE", "PERF" } },
+        NOTE = { icon = "", color = "hint", alt = { "INFO" } },
+        TEST = { icon = "⏲", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
       },
     }
   },

@@ -1,12 +1,13 @@
 local left  = '█'; --   █   
 local right = '█'; --   █  
 
+
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" }, -- Optional for icons
+  dependencies = { "nvim-tree/nvim-web-devicons" }, -- Optional
   opts = {
     options = {
-      disabled_filetypes = { 'Neotree' }, --, 'packer', 'NvimTree'
+      disabled_filetypes = { 'Neotree', 'packer', 'NvimTree'},
       globalstatus = true,
       icons_enabled = true,
       -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
@@ -17,7 +18,9 @@ return {
           onedark, onelight, palenight, papercolor_dark, papercolor_light, papercolor, powerline, pywal,
           seoul256, solarized_dark, solarized_light, Tomorrow, Tomorrow_night, wombat.
       ]]
-      theme = "modus-vivendi",
+      theme = function ()
+        return (vim.g.colors_name == "default") and "modus-vivendi" or  "auto"
+      end;
       component_separators = { left = "*", right = " "},
       section_separators = { left = left, right = right},
     },

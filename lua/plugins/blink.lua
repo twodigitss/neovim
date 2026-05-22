@@ -44,7 +44,6 @@ return {
     },
     completion = {
       menu = {
-        border = 'none',
         draw = {
           columns = {
             { "label", "label_description", gap = 3 },
@@ -52,7 +51,7 @@ return {
           },
         }
       },
-      documentation = { auto_show = true, window = { border = 'none' } },
+      -- documentation = { auto_show = true, window = { border = 'rounded' } },
     },
   }
 }

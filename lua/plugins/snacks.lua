@@ -3,7 +3,7 @@ return {
   priority = 1000, lazy = false,
   opts = {
     quickfile = { enabled = true },
-    -- statuscolumn = { enabled = true },
+    statuscolumn = { enabled = true },
     notifier = { enabled = true },
     zen = { 
       enabled = true,

@@ -12,6 +12,8 @@ return {
       js = { icon = "", color = "#f8e45c", name = "javascript" },
       ts = { icon  = "", color = "#41CCFE", name = "typescript" },
       json = { icon  = "", name = "json" },
+      go = { icon  = "", color = "#69E8FF", name = "go" },
+      
       -- json = { icon  = "", color = "#f8e45c", name = "json" },
 
       -- jsx = { icon = "", color = "#f8e45c", name = "javascriptreact" },
