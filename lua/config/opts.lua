@@ -3,11 +3,9 @@ vim.o.showtabline = 1                -- Por defecto es 1, desactiva la barra de 
 --vim.opt.cmdheight = 0                -- Esconde la barra del MODE y otras cosas
 
 vim.opt.termguicolors = true
-vim.cmd('colorscheme default')
-vim.opt.winborder = 'single' -- Options: 'single', 'double', 'rounded', 'solid', 'shadow', or 'none'
+vim.cmd('colorscheme evergarden-winter')
+vim.opt.winborder = 'solid'         -- Options: 'single', 'double', 'rounded', 'solid', 'shadow', or 'none'
 
-vim.opt.fillchars = { eob = " " }
-vim.opt.fillchars:append({ vert = " ", fold = " " })
 vim.g.mapleader = " "                -- Importante: define la tecla líder
 vim.opt.clipboard = 'unnamedplus'    -- Buffer y clipboard unificados 
 
@@ -32,9 +30,17 @@ vim.o.tabstop = 2                    -- Ancho visual de un tab
 vim.o.shiftwidth = 2                 -- Espacios para autoindentación
 
 -- FOLDS
+vim.o.foldenable = true
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldtext = ""
+vim.opt.fillchars = { eob = " " }
+vim.opt.fillchars:append({ vert = " ", fold = " " })
+vim.opt.fillchars:append( "foldclose:󰅂,foldopen:󰅀")
+
 vim.o.viewoptions = 'folds,cursor'   -- Qué guardar en archivos de vista
 vim.o.sessionoptions = 'folds'       -- Qué guardar en sesiones
-vim.o.foldmethod = 'manual'          -- Método de plegado manual
+-- vim.o.foldmethod = 'manual'          -- Método de plegado manual
 vim.o.foldnestmax = 10               -- Nivel máximo de anidamiento de pliegues
 vim.o.foldlevel = 99                 -- Nivel alto para que los pliegues estén abiertos por defecto
 vim.o.foldlevelstart = 99            -- Nivel inicial de plegado al abrir un archivo

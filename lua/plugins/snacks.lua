@@ -5,6 +5,7 @@ return {
     quickfile = { enabled = true },
     statuscolumn = { enabled = true },
     notifier = { enabled = true },
+    terminal = { enabled = true, win = { style = "terminal" }, },
     zen = { 
       enabled = true,
       toggles = {

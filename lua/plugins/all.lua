@@ -1,7 +1,10 @@
 return {
   { 'everviolet/nvim' },
   { 'alvarosevilla95/luatab.nvim',  --tabs only (no buffers)
-    opts={ separator = function() return ' ' end } 
+    opts={ 
+      separator = function() return ' ' end ,
+      windowCount = function() return '' end,
+    } 
   },
 
   { 'lewis6991/gitsigns.nvim', opts={} }, --git diff indicator
@@ -10,6 +13,11 @@ return {
   { "utilyre/barbecue.nvim", opts = {}, --breadcrumbs
     name = "barbecue", version = "*", 
     dependencies = { "SmiteshP/nvim-navic", },
+  },
+
+  { 'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    opts = {},
   },
 
   { "folke/which-key.nvim", event = "VeryLazy", opts = {} },
@@ -22,12 +30,12 @@ return {
       sign_priority = 8,
       keywords = {
         FIX =  { icon = "", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, },
-        TODO = { icon = "", color = "info" },
-        HACK = { icon = "", color = "warning" },
+        TODO = { icon = "󰸞", color = "info" },
+        HACK = { icon = "", color = "warning" },
         WARN = { icon = "", color = "warning", alt = { "WARNING", "XXX" } },
-        PERF = { icon = "", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE", "PERF" } },
-        NOTE = { icon = "", color = "hint", alt = { "INFO" } },
-        TEST = { icon = "⏲", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+        PERF = { icon = "󰔚", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE", "PERF" } },
+        NOTE = { icon = "", color = "hint", alt = { "INFO" } },
+        TEST = { icon = "", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
       },
     }
   },

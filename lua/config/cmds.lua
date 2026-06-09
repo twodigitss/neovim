@@ -30,6 +30,8 @@ local function set_default_hl()
     vim.api.nvim_set_hl(0, "NeoTreeGitModified", { link = "NormalNC" })
     vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { link = "NormalNC" })
     vim.api.nvim_set_hl(0, "MiniStarterItemPrefix", { fg = "#92BAFF" })
+    vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#54546d", bg = "NONE" })
+
   end
 end
 
@@ -78,12 +80,19 @@ vim.diagnostic.config({
   float = { border = "rounded"},
   signs = {
     text = {
-      [vim.diagnostic.severity.ERROR]   = "󰅚",
-      [vim.diagnostic.severity.WARN]    = "󰀪",
-      [vim.diagnostic.severity.HINT]    = "󰌶",
-      [vim.diagnostic.severity.INFO]    = "",
+      [vim.diagnostic.severity.ERROR]   = "",
+      [vim.diagnostic.severity.WARN]    = "",
+      [vim.diagnostic.severity.HINT]    = "",
+      [vim.diagnostic.severity.INFO]    = "",
     },
     linehl = {},
     numhl = {},
   },
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    pcall(vim.treesitter.start)
+  end,
 })

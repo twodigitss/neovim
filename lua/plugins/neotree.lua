@@ -28,30 +28,30 @@ return {
       },
       diagnostics = {
         symbols = {
-          hint = "",
-          info = "󰙎",
+          hint = "󰌵",
+          info = "",
           warn = "",
-          error = "",
+          error = "",
         },
       },
       modified = {
-        symbol = "",
-        highlight = "NeoTreeModified",
+        symbol = "󰆓",
+        highlight = "Added",
       },
       git_status = {
         use_git_status_colors = false,
         symbols = {
           -- Change type
-          added     = "✚",
-          deleted   = "✖",
+          added     = "+",
+          deleted   = "-",
           modified  = "*",
-          renamed   = "󰁕",
+          renamed   = "@",
           -- Status type
-          untracked = "", --
-          ignored   = "󰛑", --
-          unstaged  = "", --󰄱
-          staged    = "󰅠", --
-          conflict  = "󱇱", --
+          untracked = "u", --
+          ignored   = "i", --
+          unstaged  = "m", --󰄱
+          staged    = "s", --
+          conflict  = "x", --
         }
       }
     },

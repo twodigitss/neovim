@@ -1,11 +1,12 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  lazy = false,
   build = ":TSUpdate",
   opts = {
     ensure_installed = {
       "bash", "comment", "css", "html",
       "javascript","json", "lua",
-      "python", "typescript",
+      "python", "typescript", "go"
     },
     highlight = {
       enable = true,
