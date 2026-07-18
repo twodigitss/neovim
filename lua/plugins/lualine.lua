@@ -33,12 +33,12 @@ return {
       lualine_b = {{
         'filetype',
         separator = { right = left},
-        color = { bg = '#191919' }
+        -- color = { bg = '#191919' }
       }},
       lualine_c = {{
         'filename',
         icon = '',
-        color = { bg = '#121212' }
+        -- color = { bg = '#121212' }
       }},
       lualine_x = {
         { 'diagnostics', draw_empty = false, },
@@ -46,12 +46,16 @@ return {
         { 'branch',
           icon = '󰊢',
           draw_empty = false,
-          color = { bg = '#191919' },
+          -- color = { bg = '#191919' },
         },
       },
       lualine_y = {
-        { 'encoding', icon="", color = { bg = '#121212' } },
-        { 'searchcount', draw_empty=true, color = { bg = '#121212' } },
+        { 'encoding', icon="", 
+        -- color = { bg = '#121212' } 
+        },
+        { 'searchcount', draw_empty=true, 
+        -- color = { bg = '#121212' }
+        },
       },
       lualine_z = {
         {'fileformat'},

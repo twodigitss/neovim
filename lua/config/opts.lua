@@ -3,7 +3,7 @@ vim.o.showtabline = 1                -- Por defecto es 1, desactiva la barra de 
 --vim.opt.cmdheight = 0                -- Esconde la barra del MODE y otras cosas
 
 vim.opt.termguicolors = true
-vim.cmd('colorscheme evergarden-winter')
+vim.cmd('colorscheme midnight')
 vim.opt.winborder = 'solid'         -- Options: 'single', 'double', 'rounded', 'solid', 'shadow', or 'none'
 
 vim.g.mapleader = " "                -- Importante: define la tecla líder

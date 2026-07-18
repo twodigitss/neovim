@@ -18,7 +18,9 @@ vim.api.nvim_set_keymap('n', '<leader>f', ':lua Snacks.picker.files()<CR>', { no
 vim.api.nvim_set_keymap('n', '<leader>g', ':lua Snacks.picker.grep()<CR>', { noremap = true, silent = true, desc = "Search text"})
 vim.api.nvim_set_keymap('n', '<leader>kt', ':lua Snacks.picker.colorschemes()<CR>', { noremap = true, silent = true, desc = "ColorschemeSearch texts"})
 vim.api.nvim_set_keymap('n', '<leader>z', ':lua Snacks.zen()<CR>', { noremap = true, silent = true, desc="Zen Mode" })
-vim.api.nvim_set_keymap('n', '<leader>t', ':lua Snacks.terminal.toggle()<CR>', { noremap = true, silent = true, desc="Toggle terminal" })
+vim.api.nvim_set_keymap('n', '<leader>;', ':FloatermToggle<CR>', { noremap = true, silent = true, desc="Toggle terminal" })
+vim.api.nvim_set_keymap('t', '<leader>;', '<C-\\><C-n><CR>:FloatermToggle<CR>', { noremap = true, silent = true, desc="Toggle terminal" })
+vim.api.nvim_set_keymap('n', '<leader>d', ':Gitsigns preview_hunk<CR>', { noremap = true, silent = true, desc="See diffs" })
 
 -- LSP
 vim.api.nvim_set_keymap('n', '<leader>[', '<cmd>lua vim.diagnostic.jump({ count = -1 })<CR>',  { noremap = true, silent = true, desc="Prev Diagnostic" })

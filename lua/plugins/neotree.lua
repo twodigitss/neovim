@@ -40,6 +40,7 @@ return {
       },
       git_status = {
         use_git_status_colors = false,
+        enable_git_status = true,
         symbols = {
           -- Change type
           added     = "+",

@@ -3,7 +3,7 @@ return {
   dependencies = { 'rafamadriz/friendly-snippets' },
   opts = {
     keymap = { preset = 'enter' },
-    sources = {default = { 'lsp', 'path', 'snippets', 'buffer' }},
+    sources = {default = { 'lsp', 'path', 'buffer' }},
     fuzzy = {
       implementation = "lua",
     },

@@ -6,24 +6,24 @@ local Sections = {
 
 local entries = { --they are in order of appearance btw
 
+  { "NeoTree",      "󰉓",  ":Neotree dir=./",                  Sections[3] }, --󰙅
+
   { "Recent",       "",  ":lua Snacks.picker.recent()",      Sections[1] }, --
   { "Files",        "",  ":lua Snacks.picker.files(opts)",   Sections[1] }, --
   { "Text",         "",  ":lua Snacks.picker.grep(opts)",    Sections[1] }, --󰘎
-
-  { "NeoTree",      "󰉓",  ":Neotree dir=./",                  Sections[3] }, --󰙅
-  -- { "Lazy",         "󰒲",  ":Lazy",                            Sections[3] }, --󰙅
 
   { "New File",     "󱇬",  ":ene | startinsert",               Sections[2] }, --
   { "Quit",         "󰈆",  ":qa",                              Sections[2] },
 }
 
+local padding = 30
 local max = 0
+local items = {}
+
 for _, e in ipairs(entries) do
   if #e[1] > max then max = #e[1] end
 end
 
-local items = {}
-local padding = 30
 for _, e in ipairs(entries) do
   table.insert(items, {
     name    = e[1] .. string.rep(" ", max - #e[1] + padding) .. e[2],

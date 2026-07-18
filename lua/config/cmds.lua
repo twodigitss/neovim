@@ -5,9 +5,10 @@ local function set_default_hl()
     vim.api.nvim_set_hl(0, "Comment", { fg = "#8891a8", italic = true })
     vim.api.nvim_set_hl(0, "Folded", { bg = "NONE", ctermbg = "NONE" })
     vim.api.nvim_set_hl(0, "Keyword", { fg = "#92BAFF", bold = true, italic = true })
-    vim.api.nvim_set_hl(0, "@variable", { fg = "#B3D8FE", bold = true })
+    -- vim.api.nvim_set_hl(0, "@variable", { fg = "#B3D8FE", bold = true })
     vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#111217', fg = '#abb2bf' })
     vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none', fg = '#5c6370' })
+    vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#54546d", bg = "NONE" })
 
     vim.api.nvim_set_hl(0, "SnacksPicker", { bg = "#111217" })
     vim.api.nvim_set_hl(0, "SnacksPickerBorder", { fg = "#B3D8FE", bg = "none" } )
@@ -30,13 +31,36 @@ local function set_default_hl()
     vim.api.nvim_set_hl(0, "NeoTreeGitModified", { link = "NormalNC" })
     vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { link = "NormalNC" })
     vim.api.nvim_set_hl(0, "MiniStarterItemPrefix", { fg = "#92BAFF" })
-    vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#54546d", bg = "NONE" })
-
   end
 end
 
+vim.api.nvim_set_hl(0, "NeoTreeGitAdded", { link="@function", bg = "NONE" })
+vim.api.nvim_set_hl(0, "NeoTreeGitConflict", { link="@function", bg = "NONE" })
+vim.api.nvim_set_hl(0, "NeoTreeGitDeleted", { link="@function", bg = "NONE" })
+vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { link="@function", bg = "NONE" })
+vim.api.nvim_set_hl(0, "NeoTreeGitModified", { link="@function", bg = "NONE" })
+vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { link="@function", bg = "NONE" })
+vim.api.nvim_set_hl(0, "MiniStarterItemPrefix", { link="Keyword", bg = "NONE" })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
+})
+
 vim.api.nvim_create_autocmd("ColorScheme", {
-  callback = set_default_hl,
+  callback = function()
+    set_default_hl()
+    vim.api.nvim_set_hl(0, "NeoTreeGitAdded", { link="@function", bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeGitConflict", { link="@function", bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeGitDeleted", { link="@function", bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeGitIgnored", { link="@function", bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeGitModified", { link="@function", bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NeoTreeGitUntracked", { link="@function", bg = "NONE" })
+    vim.api.nvim_set_hl(0, "MiniStarterItemPrefix", { link="@function", bg = "NONE" })
+  end
+
 })
 
 set_default_hl()
